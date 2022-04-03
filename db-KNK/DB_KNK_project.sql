@@ -78,3 +78,13 @@ foreign key(Id) references Grupet(Id),
 foreign key(Id) references Lendet(Id),
 foreign key(Id) references Oraret(Id)
 );
+
+create table Studenti(
+Id integer not null auto_increment,
+Emri varchar(15),
+Mbiemri varchar(15),
+Email varchar(30),
+Viti integer,
+Grupi integer,
+Primary Key(Id),
+foreign key(Grupi) references Grupet(Id));
