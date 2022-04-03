@@ -89,6 +89,9 @@ Grupi integer,
 Primary Key(Id),
 foreign key(Grupi) references Grupet(Id));
 
+alter table Studenti add column Drejtimi integer after Email;
+alter table Studenti add foreign key(Drejtimi) references drejtimi(Id);
+
 create table User(
 Id integer not null auto_increment,
 Username varchar(100),
