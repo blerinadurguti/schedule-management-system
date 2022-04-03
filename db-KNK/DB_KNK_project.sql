@@ -88,3 +88,12 @@ Viti integer,
 Grupi integer,
 Primary Key(Id),
 foreign key(Grupi) references Grupet(Id));
+
+create table User(
+Id integer not null auto_increment,
+Username varchar(100),
+SaltedHash varchar(256),
+Salted varchar(100),
+primary key(Id),
+foreign key(Id)references Studenti(Id)
+);
