@@ -14,9 +14,9 @@ public class CreateUserController implements Initializable{
 
 	   @FXML
 	    private ChoiceBox<String> ChBoxDrejtimi;
-	    private String[] Drejtimi = {"Automatikë e Kompjuterizuar dhe Robotikë",
-	    								"Elektroenergjetikë",
-	    								"Elektronikë",
+	    private String[] Drejtimi = {"AutomatikÃ« e Kompjuterizuar dhe RobotikÃ«",
+	    								"ElektroenergjetikÃ«",
+	    								"ElektronikÃ«",
 	    								"Inxhinieri Kompjuterike",
 	    								"Telekomunikacion"
 	    								};
@@ -60,13 +60,13 @@ public class CreateUserController implements Initializable{
 
     @FXML
     void ClearEventHandler(ActionEvent event) {
-    	txtEmail.setText(null);
-    	pswConfirmPassword.setText(null);
-    	pswPassword.setText(null);
-    	txtEmri.setText(null);
-    	txtGrupi.setText(null);
-    	txtMbiemri.setText(null);
-    	txtUsername.setText(null);
+    	txtEmail.setText("");
+    	pswConfirmPassword.setText("");
+    	pswPassword.setText("");
+    	txtEmri.setText("");
+    	txtGrupi.setText("");
+    	txtMbiemri.setText("");
+    	txtUsername.setText("");
     	this.ChBoxDrejtimi.setValue(null); 
     	ChBoxViti.setValue(null);
     }
