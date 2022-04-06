@@ -19,7 +19,7 @@ public class Main extends Application{
 		FXMLLoader loader=new FXMLLoader(getClass().getResource("log_in.fxml"));
 		Parent parent=loader.load();
 		
-		Scene scene=new Scene(parent,1920,1080);
+		Scene scene=new Scene(parent,710,459);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
