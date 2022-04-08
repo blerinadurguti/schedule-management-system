@@ -10,11 +10,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import processor.Validations;
 
 public class CreateUserController implements Initializable{
 
 	private Validations v = new Validations();
+	private Alert a = new Alert(AlertType.NONE);
 	
 	   @FXML
 	    private ChoiceBox<String> ChBoxDrejtimi;
@@ -78,14 +81,22 @@ public class CreateUserController implements Initializable{
     void CreateEventHandler(ActionEvent event) {
 
     if((this.v.MatchingPasswords(pswPassword, pswConfirmPassword)) && (this.ValidateNotNull())) {
-    		System.out.println("OK");
+    	this.a.setAlertType(AlertType.CONFIRMATION);
+		this.a.setContentText("User Created!");
+		this.a.show();
     	}else {
-    		if(!this.v.MatchingPasswords(pswPassword, pswConfirmPassword)) {
-    			System.out.println("The passwords do not match!");
-    		}
-    		
-    		if(!this.ValidateNotNull()){
-    			System.out.println("One ore more fields unfilled");
+    		if(!this.v.MatchingPasswords(pswPassword, pswConfirmPassword) && !this.ValidateNotNull()) {
+    			this.a.setAlertType(AlertType.ERROR);
+    			this.a.setContentText("The passwords do not match!\nOne ore more fields unfilled!");
+    			this.a.show();
+    		}else if(!this.v.MatchingPasswords(pswPassword, pswConfirmPassword)) {
+    			this.a.setAlertType(AlertType.ERROR);
+    			this.a.setContentText("The passwords do not match!");
+    			this.a.show();
+    		}else if(!this.ValidateNotNull()){
+    			this.a.setAlertType(AlertType.ERROR);
+    			this.a.setContentText("One ore more fields unfilled!");
+    			this.a.show();
     		}
     	}
    }

@@ -3,6 +3,8 @@ package log_in;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
@@ -12,6 +14,7 @@ import processor.Validations;
 public class LogInController {
 
 	private Validations v = new Validations();
+	private Alert a = new Alert(AlertType.NONE);
 	
     @FXML
     private CheckBox CBMbajMend;
@@ -39,9 +42,13 @@ public class LogInController {
     void LogInButton(ActionEvent event) {
 
     	if(this.CheckNull()) {
-    		System.out.println("OK");
+    		this.a.setAlertType(AlertType.CONFIRMATION);
+    		this.a.setContentText("Loged In!");
+    		this.a.show();
     	}else {
-    		System.out.println("One or more fields unfilled!");
+    		this.a.setAlertType(AlertType.ERROR);
+    		this.a.setContentText("One or more fields unfilled!");
+    		this.a.show();
     	}
     	
     }
@@ -50,9 +57,8 @@ public class LogInController {
     	
     	boolean a = this.v.NullTextFields(this.txtUsername);
     	boolean b = this.v.NullPasswordFields(this.pswPassword);
-    	boolean c = this.v.SelectedCheckBox(this.CBMbajMend);
-    	
-    	if(a || b || !c) {
+       	
+    	if(a || b) {
     		return false;
     	}else {
     		return true;
