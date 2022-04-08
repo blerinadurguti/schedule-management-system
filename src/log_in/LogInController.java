@@ -1,14 +1,74 @@
+//package log_in;
+//
+//import javafx.event.ActionEvent;
+//import javafx.fxml.FXML;
+//import javafx.scene.control.Button;
+//import javafx.scene.control.CheckBox;
+//import javafx.scene.control.PasswordField;
+//import javafx.scene.control.TextField;
+//
+//public class LogInController {
+//
+//    @FXML
+//    private CheckBox CBMbajMend;
+//
+//    @FXML
+//    private Button btnClear;
+//
+//    @FXML
+//    private Button btnLogIn;
+//
+//    @FXML
+//    private PasswordField pswPassword;
+//
+//    @FXML
+//    private TextField txtUsername;
+//
+//    @FXML
+//    void ClearButton(ActionEvent event) {
+//    	this.txtUsername.setText(null);;
+//    	this.pswPassword.setText(null);;
+//    }
+//
+//    @FXML
+//    void LogInButton(ActionEvent event) {
+//
+//    	if(this.CheckNull()) {
+//    		System.out.println("OK");
+//    	}else {
+//    		System.out.println("One ore more fields unfilled");
+//    	}
+//    	
+//    }
+//
+//    private boolean CheckNull() {
+//    	
+//    	String a = this.txtUsername.getText();
+//    	String b = this.pswPassword.getText();
+//    	
+//    	if(a.equals(null) || b.equals(null)) {
+//    		return false;
+//    	}else {
+//    		return true;
+//    	}
+//    }
+//    
+//}
 package log_in;
 
 import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import processor.Validations;
 
 public class LogInController {
 
+	private Validations v = new Validations();
+	
     @FXML
     private CheckBox CBMbajMend;
 
@@ -43,10 +103,12 @@ public class LogInController {
     }
 
     private boolean CheckNull() {
-    	String a = this.txtUsername.getText();
-    	String b = this.pswPassword.getText();
     	
-    	if(a.equals("") || b.equals("") || !(this.CBMbajMend.isSelected())) {
+    	boolean a = this.v.NullTextFields(this.txtUsername);
+    	boolean b = this.v.NullPasswordFields(this.pswPassword);
+    	boolean c = this.v.SelectedCheckBox(this.CBMbajMend);
+    	
+    	if(a || b || !c) {
     		return false;
     	}else {
     		return true;

@@ -1,6 +1,7 @@
 package CreateUser;
 
 import java.net.URL;
+
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -9,14 +10,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import processor.Validations;
 
 public class CreateUserController implements Initializable{
 
+	private Validations v = new Validations();
+	
 	   @FXML
 	    private ChoiceBox<String> ChBoxDrejtimi;
-	    private String[] Drejtimi = {"AutomatikÃ« e Kompjuterizuar dhe RobotikÃ«",
-	    								"ElektroenergjetikÃ«",
-	    								"ElektronikÃ«",
+	    private String[] Drejtimi = {"Automatikë e Kompjuterizuar dhe Robotikë",
+	    								"Elektroenergjetikë",
+	    								"Elektronikë",
 	    								"Inxhinieri Kompjuterike",
 	    								"Telekomunikacion"
 	    								};
@@ -34,8 +38,7 @@ public class CreateUserController implements Initializable{
 	    	ChBoxViti.getItems().addAll(Viti);
 	    	
 		}
-	   
-	    
+	  
 	
     @FXML
     private PasswordField pswConfirmPassword;
@@ -73,46 +76,35 @@ public class CreateUserController implements Initializable{
 
     @FXML
     void CreateEventHandler(ActionEvent event) {
-    	if((this.ValidatePassword()) && (this.ValidateNotNull())) {
-    		System.out.println("OK");
-    	}else if(!this.ValidatePassword()){
-    		System.out.println("The passwords do not match!");
-    	}else {
-    	System.out.println("One ore more fields unfilled");	
-    	}
-    }
 
-    private boolean ValidatePassword() {
-    	String a = pswPassword.getText();
-    	String b = pswConfirmPassword.getText();
-    	if(a.equals(b)) {
-    		return true;
+    if((this.v.MatchingPasswords(pswPassword, pswConfirmPassword)) && (this.ValidateNotNull())) {
+    		System.out.println("OK");
     	}else {
-    	return false;
+    		if(!this.v.MatchingPasswords(pswPassword, pswConfirmPassword)) {
+    			System.out.println("The passwords do not match!");
+    		}
+    		
+    		if(!this.ValidateNotNull()){
+    			System.out.println("One ore more fields unfilled");
+    		}
     	}
-    }
-	
+   }
     private boolean ValidateNotNull() {
-    	String Emri = txtEmri.getText();
-    	String Mbiemri = txtMbiemri.getText();
-    	String Email = txtEmail.getText();
-    	String Username = txtUsername.getText();
-    	String Grupi = txtGrupi.getText();
-    	String Password = pswPassword.getText();
-    	String CPassword = pswConfirmPassword.getText();
-    	if(Emri.equals("") || Mbiemri.equals("") || Email.equals("") || Username.equals("") || Grupi.equals("") || Password.equals("") || CPassword.equals("") || this.ValidateChoiceBox()) {
-    	return false;
-    	}else {
-    		return true;
-    	}   	
-    }
     
-    private boolean ValidateChoiceBox() {
+    	boolean a = this.v.NullTextFields(this.txtEmri);
+    	boolean b = this.v.NullTextFields(this.txtMbiemri);
+    	boolean c = this.v.NullTextFields(this.txtEmail);
+    	boolean d = this.v.NullTextFields(this.txtGrupi);
+    	boolean e = this.v.NullTextFields(this.txtUsername);
+    	boolean f = this.v.NullPasswordFields(this.pswConfirmPassword);
+    	boolean g = this.v.NullPasswordFields(this.pswPassword);
+    	boolean h = this.v.NullChoiceBox(this.ChBoxDrejtimi);
+    	boolean i = this.v.NullChoiceBox(this.ChBoxViti);
     	
-    	if(this.ChBoxDrejtimi.getSelectionModel().isEmpty() || this.ChBoxViti.getSelectionModel().isEmpty()) {
-    		return true;
-    	}else {
+    	if(a || b || c || d || e || f || g || h || i) {
     		return false;
+    	}else {
+    		return true;
     	}
     }
         
