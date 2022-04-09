@@ -1,21 +1,30 @@
-package CreateUser;
+package views;
 
+import java.io.IOException;
 import java.net.URL;
 
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import processor.Validations;
 
 public class CreateUserController implements Initializable{
-
+	
+	private Stage stage;
+	private Scene scene;
+	
 	private Validations v = new Validations();
 	private Alert a = new Alert(AlertType.NONE);
 	
@@ -100,6 +109,16 @@ public class CreateUserController implements Initializable{
     		}
     	}
    }
+    
+    @FXML
+    void LogIn(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("/model/log_in.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
+    
     private boolean ValidateNotNull() {
     
     	boolean a = this.v.NullTextFields(this.txtEmri);

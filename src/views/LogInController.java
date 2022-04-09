@@ -1,10 +1,17 @@
-package log_in;
+package views;
+
+import java.io.IOException;
 
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
@@ -13,6 +20,9 @@ import processor.Validations;
 
 public class LogInController {
 
+	private Stage stage;
+	private Scene scene;
+	
 	private Validations v = new Validations();
 	private Alert a = new Alert(AlertType.NONE);
 	
@@ -25,6 +35,9 @@ public class LogInController {
     @FXML
     private Button btnLogIn;
 
+    @FXML
+    private Button btnSignUp;
+    
     @FXML
     private PasswordField pswPassword;
 
@@ -51,6 +64,15 @@ public class LogInController {
     		this.a.show();
     	}
     	
+    }
+    
+    @FXML
+    void SignUp(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("/model/CreateUser.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
     }
 
     private boolean CheckNull() {

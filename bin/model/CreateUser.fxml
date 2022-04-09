@@ -16,11 +16,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateUser.CreateUserController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CreateUserController">
    <children>
-      <AnchorPane prefHeight="401.0" prefWidth="710.0">
+      <AnchorPane prefHeight="497.0" prefWidth="710.0">
          <children>
-            <GridPane hgap="10.0" layoutX="14.0" layoutY="53.0" prefHeight="386.0" prefWidth="682.0" vgap="10.0">
+            <GridPane hgap="10.0" layoutX="14.0" layoutY="53.0" prefHeight="418.0" prefWidth="682.0" vgap="10.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="10.0" prefWidth="64.20001831054688" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="148.00001220703126" />
@@ -37,11 +37,12 @@
                   <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <ImageView fitHeight="141.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.columnSpan="3">
                      <image>
-                        <Image url="@../../../../Desktop/unipr.png" />
+                        <Image url="/unipr.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="20.0" />
@@ -84,6 +85,16 @@
                      <GridPane.margin>
                         <Insets left="15.0" />
                      </GridPane.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="7">
+                     <children>
+                        <Label text="Already have an account?">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#LogIn" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Log In" />
+                     </children>
                   </HBox>
                </children>
             </GridPane>

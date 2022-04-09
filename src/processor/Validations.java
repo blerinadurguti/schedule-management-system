@@ -1,6 +1,5 @@
 package processor;
 
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -41,13 +40,5 @@ public class Validations {
 		return false;
 		}
 	}
-	
-	public boolean SelectedCheckBox(CheckBox a) {
-		if(a.isSelected()) {
-			return true;
-		}else {
-		return false;
-		}
-	}
-		
+			
 }
