@@ -42,7 +42,7 @@
                <children>
                   <ImageView fitHeight="141.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.columnSpan="3">
                      <image>
-                        <Image url="/unipr.png" />
+                        <Image url="/images/unipr.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="20.0" />

@@ -37,7 +37,7 @@
                <children>
                   <ImageView fitHeight="150.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2">
                      <image>
-                        <Image url="/unipr.png" />
+                        <Image url="/images/unipr.png" />
                      </image>
                   </ImageView>
                   <Label text="Username:" GridPane.rowIndex="1" />
