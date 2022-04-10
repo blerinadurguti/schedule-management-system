@@ -11,9 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import processor.Validations;
@@ -25,6 +27,12 @@ public class LogInController {
 	
 	private Validations v = new Validations();
 	private Alert a = new Alert(AlertType.NONE);
+	
+    @FXML
+    private Label lbl1;
+
+    @FXML
+    private Label lbl2;
 	
     @FXML
     private CheckBox CBMbajMend;
@@ -52,16 +60,25 @@ public class LogInController {
     }
 
     @FXML
-    void LogInButton(ActionEvent event) {
-
+    void LogInButton(ActionEvent event) {  	
+    	
     	if(this.CheckNull()) {
     		this.a.setAlertType(AlertType.CONFIRMATION);
     		this.a.setContentText("Loged In!");
     		this.a.show();
+    		this.EmptyLabel();
     	}else {
-    		this.a.setAlertType(AlertType.ERROR);
-    		this.a.setContentText("One or more fields unfilled!");
-    		this.a.show();
+    		if(this.v.NullTextFields(this.txtUsername)) {
+    			this.FillLabelErr(this.lbl1);
+    		}else {
+    			this.FillLabel(this.lbl1);
+    		}
+    		
+    		if(this.v.NullPasswordFields(this.pswPassword)) {
+    			this.FillLabelErr(this.lbl2);
+    		}else {
+    			this.FillLabel(this.lbl2);
+    		}
     	}
     	
     }
@@ -85,6 +102,21 @@ public class LogInController {
     	}else {
     		return true;
     	}
+    }
+    
+    private void FillLabel(Label a) {
+    	a.setText("Filled!");
+    	a.setTextFill(Color.GREEN);
+    }
+    
+    private void FillLabelErr(Label a) {
+    	a.setText("Fielld must be filled!");
+    }
+    private void EmptyLabel() {
+    	this.lbl1.setText("");
+    	this.lbl1.setTextFill(Color.RED);
+    	this.lbl2.setText("");
+    	this.lbl2.setTextFill(Color.RED);
     }
     
 }
