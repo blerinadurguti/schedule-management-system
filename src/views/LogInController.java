@@ -110,7 +110,7 @@ public class LogInController {
     }
     
     private void FillLabelErr(Label a) {
-    	a.setText("Fielld must be filled!");
+    	a.setText("Field must be filled!");
     }
     private void EmptyLabel() {
     	this.lbl1.setText("");
