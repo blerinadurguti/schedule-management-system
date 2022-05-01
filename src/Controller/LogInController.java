@@ -1,4 +1,4 @@
-package views;
+package Controller;
 
 import java.io.IOException;
 
@@ -85,7 +85,7 @@ public class LogInController {
     
     @FXML
     void SignUp(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/model/CreateUser.fxml"));
+    	Parent root = FXMLLoader.load(getClass().getResource("/views/CreateUser.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
