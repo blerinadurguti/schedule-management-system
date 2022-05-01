@@ -34,7 +34,7 @@ public class Validations {
 		String a = A.getText();
 		String b = B.getText();
 		
-		if(a.equals(b)) {
+		if(a.equals(b) && (a != "") && (b != "")) {
 			return true;
 		}else {
 		return false;

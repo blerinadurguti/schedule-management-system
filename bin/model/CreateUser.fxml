@@ -16,11 +16,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CreateUserController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CreateUserController">
    <children>
-      <AnchorPane prefHeight="497.0" prefWidth="710.0">
+      <AnchorPane prefHeight="530.0" prefWidth="710.0">
          <children>
-            <GridPane hgap="10.0" layoutX="14.0" layoutY="53.0" prefHeight="418.0" prefWidth="682.0" vgap="10.0">
+            <GridPane hgap="10.0" layoutX="14.0" layoutY="53.0" prefHeight="478.0" prefWidth="682.0" vgap="10.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.20001220703125" minWidth="10.0" prefWidth="64.20001831054688" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="148.00001220703126" />
@@ -31,18 +31,23 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="145.59998168945313" minHeight="101.59998168945313" prefHeight="136.79999389648438" />
-                <RowConstraints maxHeight="68.20001831054688" minHeight="10.0" prefHeight="33.00000610351563" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="29.60001220703124" minHeight="10.0" prefHeight="29.60001220703124" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="31.199987792968756" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="68.20001831054688" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="68.20001831054688" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="29.60001220703124" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="29.60001220703124" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="31.199987792968756" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <ImageView fitHeight="141.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.columnSpan="3">
                      <image>
-                        <Image url="/unipr.png" />
+                        <Image url="@../../../../Documents/GitHub/KNK_project/src/images/unipr.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="20.0" />
@@ -55,29 +60,29 @@
                      </GridPane.margin>
                   </Label>
                   <TextField fx:id="txtMbiemri" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="Mbiemri" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Label text="Email:" GridPane.rowIndex="2" />
-                  <TextField fx:id="txtEmail" prefHeight="26.0" prefWidth="154.0" promptText="Email" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <Label text="Drejtimi:" GridPane.rowIndex="3" />
-                  <ChoiceBox fx:id="ChBoxDrejtimi" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label text="Viti:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Label text="Email:" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtEmail" prefHeight="26.0" prefWidth="154.0" promptText="Email" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                  <Label text="Drejtimi:" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="ChBoxDrejtimi" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Viti:" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <padding>
                         <Insets left="35.0" />
                      </padding>
                   </Label>
-                  <ChoiceBox fx:id="ChBoxViti" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <Label text="Grupi:" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <ChoiceBox fx:id="ChBoxViti" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Label text="Grupi:" GridPane.columnIndex="4" GridPane.rowIndex="5">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="txtGrupi" maxHeight="1.7976931348623157E308" maxWidth="50.0" prefHeight="26.0" prefWidth="52.0" promptText="Grupi" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <Label text="Username:" GridPane.rowIndex="4" />
-                  <TextField fx:id="txtUsername" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Label text="Password:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <PasswordField fx:id="pswPassword" promptText="Password" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <Label text="Confirm Password:" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                  <PasswordField fx:id="pswConfirmPassword" promptText="Confirm Password" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="6">
+                  <TextField fx:id="txtGrupi" maxHeight="1.7976931348623157E308" maxWidth="50.0" prefHeight="26.0" prefWidth="52.0" promptText="Grupi" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <Label text="Username:" GridPane.rowIndex="7" />
+                  <TextField fx:id="txtUsername" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="Password:" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <PasswordField fx:id="pswPassword" promptText="Password" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                  <Label text="Confirm Password:" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <PasswordField fx:id="pswConfirmPassword" promptText="Confirm Password" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="11">
                      <children>
                         <Button mnemonicParsing="false" onAction="#CreateEventHandler" style="-fx-background-color: Grey;" text="Create" />
                         <Button mnemonicParsing="false" onAction="#ClearEventHandler" style="-fx-background-color: Grey;" text="Clear" />
@@ -86,7 +91,7 @@
                         <Insets left="15.0" />
                      </GridPane.margin>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="7">
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="12">
                      <children>
                         <Label text="Already have an account?">
                            <HBox.margin>
@@ -96,6 +101,15 @@
                         <Button mnemonicParsing="false" onAction="#LogIn" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Log In" />
                      </children>
                   </HBox>
+                  <Label fx:id="lblEmri" style="-fx-text-fill: red; -fx-font-size: 13;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <Label fx:id="lblMbiemri" style="-fx-text-fill: red; -fx-font-size: 13;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label fx:id="lblEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="lblDrejtimi" style="-fx-font-size: 13;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="lblViti" style="-fx-font-size: 13;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Label fx:id="lblGrupi" style="-fx-font-size: 13;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                  <Label fx:id="lblUsername" style="-fx-font-size: 13;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label fx:id="lblPassword" prefHeight="19.0" prefWidth="237.0" style="-fx-font-size: 13;" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+                  <Label fx:id="lblCPassword" style="-fx-font-size: 13;" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="10" />
                </children>
             </GridPane>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c70202" height="48.0" stroke="BLACK" strokeType="INSIDE" width="710.0" />

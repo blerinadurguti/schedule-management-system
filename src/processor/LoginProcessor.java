@@ -1,6 +1,7 @@
 package processor;
 
 import model.Login;
+
 import repository.LoginRepository;
 
 public class LoginProcessor {
