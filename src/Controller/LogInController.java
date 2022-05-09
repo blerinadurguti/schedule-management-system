@@ -1,6 +1,8 @@
 package Controller;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
 
@@ -19,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import processor.Validations;
+import repository.UserRepository;
 
 public class LogInController {
 
@@ -26,7 +29,9 @@ public class LogInController {
 	private Scene scene;
 	
 	private Validations v = new Validations();
+	//alertin duhet me e hek ne nderkoh me gjasa sna vyn
 	private Alert a = new Alert(AlertType.NONE);
+	private UserRepository userRepository = new UserRepository();
 	
     @FXML
     private Label lbl1;
@@ -57,16 +62,30 @@ public class LogInController {
     	this.txtUsername.setText("");
     	this.pswPassword.setText("");
     	this.CBMbajMend.setSelected(false);
+    	EmptyLabel();
     }
 
     @FXML
-    void LogInButton(ActionEvent event) {  	
+    void LogInButton(ActionEvent event) throws NoSuchAlgorithmException, SQLException, IOException {  	
     	
     	if(this.CheckNull()) {
-    		this.a.setAlertType(AlertType.CONFIRMATION);
-    		this.a.setContentText("Loged In!");
-    		this.a.show();
-    		this.EmptyLabel();
+    	
+    		String username = this.txtUsername.getText();
+    		String password = this.pswPassword.getText();
+    		    		
+    		if(userRepository.IsThereOne(username)) {
+    			if(userRepository.validateLogin(username, password)) {
+        			
+        			Parent root = FXMLLoader.load(getClass().getResource("/views/Home.fxml"));
+        			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        			scene = new Scene(root);
+        			stage.setScene(scene);
+        			stage.show();
+        			this.EmptyLabel();
+        			}
+    		}else {
+    			NotMatching();
+    		}
     	}else {
     		if(this.v.NullTextFields(this.txtUsername)) {
     			this.FillLabelErr(this.lbl1);
@@ -116,6 +135,13 @@ public class LogInController {
     	this.lbl1.setText("");
     	this.lbl1.setTextFill(Color.RED);
     	this.lbl2.setText("");
+    	this.lbl2.setTextFill(Color.RED);
+    }
+    
+    private void NotMatching() {
+    	this.lbl1.setText("Username or Password not matching!");
+    	this.lbl2.setText("Username or Password not matching!");
+    	this.lbl1.setTextFill(Color.RED);
     	this.lbl2.setTextFill(Color.RED);
     }
     

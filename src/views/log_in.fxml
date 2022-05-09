@@ -16,15 +16,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
    <children>
-      <AnchorPane prefHeight="498.0" prefWidth="710.0">
+      <AnchorPane prefHeight="562.0" prefWidth="814.0">
          <children>
-            <GridPane alignment="CENTER" layoutX="147.0" layoutY="87.0" prefHeight="387.0" prefWidth="416.0" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="147.0">
+            <GridPane alignment="CENTER" layoutX="146.0" layoutY="89.0" prefHeight="402.0" prefWidth="522.0" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="146.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="108.4" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.0" minWidth="10.0" prefWidth="135.6" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.0" minWidth="10.0" prefWidth="123.19998779296873" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints />
@@ -37,20 +36,32 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                  <ImageView fitHeight="150.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2147483647">
                      <image>
                         <Image url="@../../../../Documents/GitHub/KNK_project/src/images/unipr.png" />
                      </image>
+                     <GridPane.margin>
+                        <Insets left="136.0" />
+                     </GridPane.margin>
                   </ImageView>
-                  <Label text="Username:" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtUsername" promptText="Username" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <Label text="Password:" GridPane.rowIndex="3" />
-                  <PasswordField fx:id="pswPassword" promptText="Password" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-                  <CheckBox fx:id="CBMbajMend" mnemonicParsing="false" text="Mbaj ne mend" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Username:" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding></Label>
+                  <TextField fx:id="txtUsername" maxWidth="250.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Password:" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding></Label>
+                  <PasswordField fx:id="pswPassword" maxWidth="250.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <CheckBox fx:id="CBMbajMend" mnemonicParsing="false" text="Mbaj ne mend" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
-                        <Button fx:id="btnLogIn" mnemonicParsing="false" onAction="#LogInButton" style="-fx-background-color: grey;" text="Log In" />
-                        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#ClearButton" style="-fx-background-color: grey;" text="Clear">
+                        <Button fx:id="btnLogIn" mnemonicParsing="false" onAction="#LogInButton" style="-fx-background-color: #c70202;" text="Log In" textFill="WHITE" />
+                        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#ClearButton" style="-fx-background-color: #c70202;" text="Clear" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -78,7 +89,7 @@
                   <Label fx:id="lbl2" style="-fx-text-fill: red; -fx-font-size: 13;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
                </children>
             </GridPane>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c70202" height="48.0" stroke="BLACK" strokeType="INSIDE" width="710.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c70202" height="48.0" stroke="BLACK" strokeType="INSIDE" width="814.0" />
          </children>
       </AnchorPane>
    </children>
