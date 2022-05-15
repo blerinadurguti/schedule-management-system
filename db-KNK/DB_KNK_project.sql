@@ -86,7 +86,7 @@ insert into User(Id,Username,SaltedHash,Salted) value
 
 create table Lendet(
 Id integer not null auto_increment,
-Emri varchar(30),
+Emri varchar(50),
 primary key(Id)
 );
 
@@ -142,7 +142,7 @@ insert into Lendet(Id, Emri) values
 (49, "Instalimet elektrike"),
 (50, "Elektronika Energjetike"),
 (51, "Energjia dhe Mjedisi"),
-(52, "Stabilimentet Elektroenergjetike",
+(52, "Stabilimentet Elektroenergjetike"),
 (53, "Makinat elektrike 2"),
 (54, "Bartja dhe shperndarja e energjise elektrike"),
 (55, "Aplikacionet softuerike ne SEE-Matlab"),
@@ -186,7 +186,7 @@ insert into Lendet(Id, Emri) values
 (93, "Sistemet e shperndara"),
 (94, "Protokollet komunikuese"),
 (95, "Sistemet komutuese"),
-(96, "Rrjetet telekomunikuese"));
+(96, "Rrjetet telekomunikuese");
 
 
 create table StafiAkademik(
