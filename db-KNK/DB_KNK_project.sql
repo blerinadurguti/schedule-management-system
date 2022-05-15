@@ -103,3 +103,16 @@ Id integer not null auto_increment,
 Emri varchar(10),
 primary key(Id)
 );
+
+
+create table Oraret(
+Id integer not null auto_increment,
+Profesori_Asistenti integer,
+Grupi integer,
+Koha time,
+dita integer,
+primary key(Id),
+foreign key(Profesori_Asistenti) references StafiAkademik(Id),
+foreign key(Grupi) references Grupet(Id)
+);
+
