@@ -101,7 +101,7 @@ public class CreateUserController implements Initializable{
     private PasswordField pswPassword;
 
     @FXML
-    private TextField txtEmail;
+    private TextField txtEmail; 
 
     @FXML
     private TextField txtEmri;
