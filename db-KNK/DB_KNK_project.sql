@@ -1,76 +1,35 @@
-create database smo;
-use smo;
+use SMO;
 
-create table VitiAkademik(
-Id integer not null auto_increment,
-Viti varchar(10),
-primary key(Id)
-);
+drop table if exists User;
+drop table if exists Studenti;
+drop table if exists Grupet;
+drop table if exists Lendet;
+drop table if exists StafiAkademik;
+drop table if exists Salla;
+drop table if exists AssignedSubjectDrejtimi;
+drop table if exists Drejtimi;
+drop table if exists VitiAkademik;
+drop table if exists Oraret;
+drop table if exists Assigned;
+drop table if exists AssignedSubjectTeacher;
 
-insert into vitiakademik(Viti)values
-("Viti 1"),
-("Viti 2"),
-("Viti 3");
-
-
+-- SMO -> Sistemi per Menaxhimin e Orareve
+use SMO;
 create table Grupet(
 Id integer not null auto_increment,
-Emri varchar(10),
-a_b varchar(1),
+Emri varchar(50),
 Viti integer,
 primary key(Id)
 );
-
-insert into grupet(Emri, a_b, Viti)values
-("Grupi 1", "A", 1),
-("Grupi 1", "B", 1),
-("Grupi 2", "A", 1),
-("Grupi 2", "B", 1),
-("Grupi 3", "A", 1),
-("Grupi 3", "B", 1),
-("Grupi 4", "A", 1),
-("Grupi 4", "B", 1),
-("Grupi 5", "A", 1),
-("Grupi 5", "B", 1),
-("Grupi 1", "A", 2),
-("Grupi 1", "B", 2),
-("Grupi 2", "A", 2),
-("Grupi 2", "B", 2),
-("Grupi 1", "A", 3),
-("Grupi 1", "B", 3),
-("Grupi 2", "A", 3),
-("Grupi 2", "B", 3);
-
-
-create table Drejtimi(
-Id integer not null auto_increment,
-Emri varchar(40),
-primary key(Id)
-);
-
-insert into Drejtimi(Emri)values
-("Automatikë e Kompjuterizuar dhe Robotikë"),
-("Elektroenergjetikë"),
-("Elektronikë"),
-("Inxhinieri Kompjuterike"),
-("Telekomunikacion");
-
 
 create table Studenti(
 Id integer not null auto_increment,
 Emri varchar(15),
 Mbiemri varchar(15),
-StudentId varchar(30),
-Drejtimi integer,
 Viti integer,
 Grupi integer,
 Primary Key(Id),
-foreign key(Drejtimi) references drejtimi(ID),
-foreign key(Viti) references vitiakademik(ID),
 foreign key(Grupi) references Grupet(Id));
-
-insert into studenti (Emri, Mbiemri) value
-("Admin","Admin");
 
 create table User(
 Id integer not null,
@@ -81,25 +40,79 @@ primary key(Id),
 foreign key(Id)references Studenti(Id)
 );
 
-insert into User(Id,Username,SaltedHash,Salted) value
-(1,"admin","1966c0c9281ce8b3d199fe7c2b1a1f49b8e461b80e3a12dda06f0d214ff2ee5f","hsZxr8V2rZOPz6rlE4yfLoGxlIvHwVf36hsXH7XdZrkqjR3rVc8oklwDb1gWIuq0");
-
 create table Lendet(
 Id integer not null auto_increment,
-Emri varchar(30),
+Emri varchar(50),
 primary key(Id)
 );
 
 create table StafiAkademik(
 Id integer not null auto_increment,
-Emri varchar(30),
-Mbiemri varchar(30),
-Pozita varchar(10),
+Emri varchar(50),
+Mbiemri varchar(50),
+Pozita varchar(50),
 primary key(Id)
 );
 
 create table Salla(
 Id integer not null auto_increment,
-Emri varchar(10),
+Emri varchar(50),
 primary key(Id)
 );
+
+create table Drejtimi(
+Id integer not null auto_increment,
+Emri varchar(50),
+primary key(Id)
+);
+
+create table VitiAkademik(
+Id integer not null auto_increment,
+Viti varchar(10),
+primary key(Id)
+);
+
+create table Oraret(
+Id integer not null auto_increment,
+Orari varchar(30),
+primary key(Id)
+);
+
+create table Assigned(
+Id integer not null auto_increment,
+GrupetId integer,
+LendetId integer,
+OraretId integer,
+primary key(Id),
+foreign key(Id) references Grupet(Id),
+foreign key(Id) references Lendet(Id),
+foreign key(Id) references Oraret(Id)
+);
+
+create table AssignedSubjectDrejtimi(
+Id integer not null auto_increment,
+DrejtimiId integer,
+VitiAkademikId integer,
+primary key(Id),
+foreign key(DrejtimiId) references Drejtimi(Id),
+foreign key(VitiAkademikId) references VitiAkademik(Id)
+);
+
+create table AssignedSubjectTeacher(
+Id integer not null auto_increment,
+LendetId integer,
+StafiAkademikIdProfesori integer,
+StafiAkademikIdAsistenti integer,
+SallaId integer,
+primary key(Id),
+foreign key(LendetId) references Lendet(Id),
+foreign key(StafiAkademikIdProfesori) references StafiAkademik(Id),
+foreign key(StafiAkademikIdAsistenti) references StafiAkademik(Id),
+foreign key(SallaId) references Salla(Id)
+);
+
+
+alter table Studenti add column Drejtimi integer after Mbiemri;
+alter table Studenti add foreign key(Drejtimi) references drejtimi(Id);
+alter table Studenti add column StudentId varchar(30) after Mbiemri;
+alter table stafiakademik auto_increment=1;
