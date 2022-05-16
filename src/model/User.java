@@ -10,6 +10,8 @@ public class User {
 	private String saltedHash;
 	private String salted;
 	
+	
+	
 	public static User fromResultSet(ResultSet res) {
 		
 		try {

@@ -82,7 +82,10 @@ public class LogInController {
         			stage.setScene(scene);
         			stage.show();
         			this.EmptyLabel();
+        			}else {
+        				this.Wrong();
         			}
+    			
     		}else {
     			NotMatching();
     		}
@@ -143,6 +146,11 @@ public class LogInController {
     	this.lbl2.setText("Username or Password not matching!");
     	this.lbl1.setTextFill(Color.RED);
     	this.lbl2.setTextFill(Color.RED);
+    }
+    
+    private void Wrong() {
+    	this.lbl2.setText("Password wrong!");
+    	this.lbl2.setTextFill(Color.RED);    	
     }
     
 }
