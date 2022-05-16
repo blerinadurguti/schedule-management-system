@@ -1,6 +1,3 @@
--- insert into User(Id,Username,SaltedHash,Salted) value
--- (1,"admin","1966c0c9281ce8b3d199fe7c2b1a1f49b8e461b80e3a12dda06f0d214ff2ee5f","hsZxr8V2rZOPz6rlE4yfLoGxlIvHwVf36hsXH7XdZrkqjR3rVc8oklwDb1gWIuq0");
-
 insert into Lendet(Emri) values
 ("Gjuhe Angleze"),
 ("Shkathtesi Komunikuese"),
@@ -179,6 +176,26 @@ insert into salla (Emri) values
 ("636"),
 ("745");
 
+insert into grupet(Emri, a_b, Viti)values
+("Grupi 1", "A", 1),
+("Grupi 1", "B", 1),
+("Grupi 2", "A", 1),
+("Grupi 2", "B", 1),
+("Grupi 3", "A", 1),
+("Grupi 3", "B", 1),
+("Grupi 4", "A", 1),
+("Grupi 4", "B", 1),
+("Grupi 5", "A", 1),
+("Grupi 5", "B", 1),
+("Grupi 1", "A", 2),
+("Grupi 1", "B", 2),
+("Grupi 2", "A", 2),
+("Grupi 2", "B", 2),
+("Grupi 1", "A", 3),
+("Grupi 1", "B", 3),
+("Grupi 2", "A", 3),
+("Grupi 2", "B", 3);
+
 insert into Drejtimi(Emri)values
 ("Automatikë e Kompjuterizuar dhe Robotikë"),
 ("Elektroenergjetikë"),
@@ -193,3 +210,6 @@ insert into vitiakademik(Viti)values
 
 insert into studenti (Emri, Mbiemri) value
 ("Admin","Admin");
+
+insert into User(Id,Username,SaltedHash,Salted) value
+(1,"admin","1966c0c9281ce8b3d199fe7c2b1a1f49b8e461b80e3a12dda06f0d214ff2ee5f","hsZxr8V2rZOPz6rlE4yfLoGxlIvHwVf36hsXH7XdZrkqjR3rVc8oklwDb1gWIuq0");
