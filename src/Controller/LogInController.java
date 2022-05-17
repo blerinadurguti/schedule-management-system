@@ -21,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import processor.Validations;
+import repository.ProfesoriUserRepository;
 import repository.UserRepository;
 
 public class LogInController {
@@ -32,15 +33,13 @@ public class LogInController {
 	//alertin duhet me e hek ne nderkoh me gjasa sna vyn
 	private Alert a = new Alert(AlertType.NONE);
 	private UserRepository userRepository = new UserRepository();
+	private ProfesoriUserRepository profesoriUserRepository = new ProfesoriUserRepository();
 	
     @FXML
     private Label lbl1;
 
     @FXML
     private Label lbl2;
-	
-    @FXML
-    private CheckBox CBMbajMend;
 
     @FXML
     private Button btnClear;
@@ -61,7 +60,6 @@ public class LogInController {
     void ClearButton(ActionEvent event) {
     	this.txtUsername.setText("");
     	this.pswPassword.setText("");
-    	this.CBMbajMend.setSelected(false);
     	EmptyLabel();
     }
 
@@ -86,6 +84,19 @@ public class LogInController {
         				this.Wrong();
         			}
     			
+    		}else if(profesoriUserRepository.IsThereOne(username)){
+    			if(profesoriUserRepository.validateLogin(username, password)) {
+    				
+    				Parent root = FXMLLoader.load(getClass().getResource("/views/HomeProfesori.fxml"));
+        			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        			scene = new Scene(root);
+        			stage.setScene(scene);
+        			stage.show();
+        			this.EmptyLabel();
+    			}else {
+    				this.Wrong();
+    			}
+
     		}else {
     			NotMatching();
     		}

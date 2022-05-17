@@ -30,6 +30,8 @@ public class CreateUserProcessor {
 	private String viti;
 	private int vitiId;
 	private String igrupi;
+	private String igrupinr;
+	private String igrupia_b;
 	private String grupi;
 	private int grupiId;
 	//user
@@ -48,12 +50,18 @@ public class CreateUserProcessor {
 		this.igrupi = igrupi;
 		this.username = username;
 		this.password = password;
+		this.defineGrupi();
 		this.ConcatGrupi();
 		this.insertimi();
 	}
+	
+	private void defineGrupi() {
+		this.igrupinr = this.igrupi.substring(0,1);
+		this.igrupia_b = this.igrupi.substring(1,2);
+	}
 
 	private void ConcatGrupi() {
-		this.grupi = "Grupi " + this.igrupi;
+		this.grupi = "Grupi " + this.igrupinr;
 	}
 	
 	private void insertimi() throws Exception {		
@@ -76,7 +84,7 @@ public class CreateUserProcessor {
 	}
 	
 	private void setGrupiId() throws SQLException {
-		this.grupiId = grupiRepository.getIdByEmri(this.grupi,this.vitiId);
+		this.grupiId = grupiRepository.getIdByEmri(this.grupi,this.igrupia_b,this.vitiId);
 	}
 	
 	private void setId() throws SQLException {

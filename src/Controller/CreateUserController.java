@@ -74,6 +74,10 @@ public class CreateUserController implements Initializable{
 	    @FXML
 	    private ChoiceBox<String> ChBoxViti;	
 	    
+	    @FXML
+	    private ChoiceBox<String> ChBoxGrupi;
+	    private String[] Grupet = {"1A","1B","2A","2B","3A","3B","4A","4B","5A","5B"
+				};
 	    
 	    @Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
@@ -90,7 +94,9 @@ public class CreateUserController implements Initializable{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	    	
+				
+	    	ChBoxGrupi.getItems().addAll(this.Grupet);
+
 		}
 	  
 	
@@ -106,8 +112,8 @@ public class CreateUserController implements Initializable{
     @FXML
     private TextField txtEmri;
 
-    @FXML
-    private TextField txtGrupi;
+//    @FXML
+//    private TextField txtGrupi;
 
     @FXML
     private TextField txtMbiemri;
@@ -123,7 +129,7 @@ public class CreateUserController implements Initializable{
     	pswConfirmPassword.setText("");
     	pswPassword.setText("");
     	txtEmri.setText("");
-    	txtGrupi.setText("");
+    	ChBoxGrupi.setValue(null);
     	txtMbiemri.setText("");
     	txtStudentId.setText("");
     	txtUsername.setText("");
@@ -145,7 +151,7 @@ public class CreateUserController implements Initializable{
     			String studentId = this.txtStudentId.getText();
     			String drejtimi = this.ChBoxDrejtimi.getValue();
     			String viti = this.ChBoxViti.getValue();
-    			String grupi = this.txtGrupi.getText();
+    			String grupi = this.ChBoxGrupi.getValue();
     			String username = this.txtUsername.getText();
     			String password = this.pswPassword.getText();
     			
@@ -222,7 +228,7 @@ public class CreateUserController implements Initializable{
     	if(b == true) {this.FillLabelErr(this.lblMbiemri);}else {this.FillLabel(this.lblMbiemri);}
     	boolean c = this.v.NullTextFields(this.txtStudentId);
     	if(c == true) {this.FillLabelErr(this.lblStudentId);}else {this.FillLabel(this.lblStudentId);}
-    	boolean d = this.v.NullTextFields(this.txtGrupi);
+    	boolean d = this.v.NullChoiceBox(ChBoxGrupi);
     	if(d == true) {this.FillLabelErr(this.lblGrupi);}else {this.FillLabel(this.lblGrupi);}
     	boolean e = this.v.NullTextFields(this.txtUsername);
     	if(e == true) {this.FillLabelErr(this.lblUsername);}else {this.FillLabel(this.lblUsername);}

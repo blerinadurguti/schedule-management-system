@@ -1,3 +1,5 @@
+drop database if exists SMO;
+create database SMO;
 use SMO;
 
 drop table if exists User;
@@ -58,7 +60,7 @@ foreign key(Id)references Studenti(Id)
 
 create table Lendet(
 Id integer not null auto_increment,
-Emri varchar(30),
+Emri varchar(50),
 primary key(Id)
 );
 
@@ -66,8 +68,17 @@ create table StafiAkademik(
 Id integer not null auto_increment,
 Emri varchar(30),
 Mbiemri varchar(30),
-Pozita varchar(10),
+Pozita varchar(50),
 primary key(Id)
+);
+
+create table profesorUser(
+Id integer not null,
+Username varchar(100),
+SaltedHash varchar(256),
+Salted varchar(100),
+primary key(Id),
+foreign key(Id)references StafiAkademik(Id)
 );
 
 create table Salla(
@@ -75,7 +86,6 @@ Id integer not null auto_increment,
 Emri varchar(10),
 primary key(Id)
 );
-
 
 create table Oraret(
 Id integer not null auto_increment,
@@ -87,4 +97,3 @@ primary key(Id),
 foreign key(Profesori_Asistenti) references StafiAkademik(Id),
 foreign key(Grupi) references Grupet(Id)
 );
-

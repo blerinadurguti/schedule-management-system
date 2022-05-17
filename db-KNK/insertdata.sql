@@ -96,6 +96,18 @@ insert into Lendet(Emri) values
 ("Sistemet komutuese"),
 ("Rrjetet telekomunikuese");
 
+drop trigger if exists SMO.Insert_Into_Profesor_User_On_Insert_Into_Stafi_Akademik;
+delimiter //
+create trigger Insert_Into_Profesor_User_On_Insert_Into_Stafi_Akademik after insert on stafiakademik for each row
+ begin
+SET SQL_SAFE_UPDATES = 0;
+insert into profesoruser(Id,Username,SaltedHash,Salted) values
+(new.Id,new.Emri, "b7dd0f6b41c493aba29f21f897e5ff22869a138e57de0cef30124f951f2ef860" , "8XOPWMKGwHbc8sjIh5ysiFqL8ujZqg90zhhcxqn0aVRpQSwNSj0Lv6rKGOy3eSQh");
+
+SET SQL_SAFE_UPDATES = 1;
+ end //
+delimiter //;
+
 insert into stafiakademik (emri, mbiemri, pozita) values
 ("Blerim", "Rexha", "Profesor i rregullt"),
 ("Enver", "Hamiti", "Profesor i rregullt"),
