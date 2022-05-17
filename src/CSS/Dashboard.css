@@ -1,0 +1,22 @@
+.button{
+    -fx-background-color: #c70202;
+}
+
+.button:hover{
+    -fx-background-color: #a10702;
+    -fx-cursor: hand;
+}
+
+.button:pressed{
+    -fx-background-color: #800400;
+}
+
+.addlecture{
+    -fx-background-color: #c70202;
+    -fx-border-radius: none;
+}
+
+.tablecolumn{
+    -fx-background-color:#e80101;
+    -fx-text-fill: #fff;
+}
