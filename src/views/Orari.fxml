@@ -39,7 +39,7 @@
                            <graphic>
                               <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../OneDrive/Documents/GitHub/KNK_project/src/images/log.png" />
+                                    <Image url="@../images/log.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -51,7 +51,7 @@
                            <graphic>
                               <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../OneDrive/Documents/GitHub/KNK_project/src/images/profile.png" />
+                                    <Image url="@../images/profile.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -63,7 +63,7 @@
                            <graphic>
                               <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../OneDrive/Documents/GitHub/KNK_project/src/images/table.png" />
+                                    <Image url="@../images/table.png" />
                                  </image>
                               </ImageView>
                            </graphic>
