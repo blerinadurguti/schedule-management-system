@@ -1,8 +1,9 @@
 .button{
     -fx-background-color: #c70202;
-    -fx-text-fill: white;
 }
-
+/* .button{
+    -fx-background-color: #e80101;
+} */
 .button:hover{
     -fx-background-color: #a10702;
     -fx-cursor: hand;
@@ -20,4 +21,9 @@
 .tablecolumn{
     -fx-background-color:#e80101;
     -fx-text-fill: #fff;
+}
+
+.button{
+    -fx-background-color: #c70202;
+    -fx-text-fill: white;
 }

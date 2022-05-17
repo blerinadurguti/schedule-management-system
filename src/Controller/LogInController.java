@@ -71,7 +71,7 @@ public class LogInController {
     		String username = this.txtUsername.getText();
     		String password = this.pswPassword.getText();
     		    		
-    		if(userRepository.IsThereOne(username)) {
+    		if((userRepository.IsThereOne(username)) && (userRepository.validateLogin(username, password))) {
     			if(userRepository.validateLogin(username, password)) {
         			
         			Parent root = FXMLLoader.load(getClass().getResource("/views/Home.fxml"));
@@ -83,18 +83,17 @@ public class LogInController {
         			}else {
         				this.Wrong();
         			}
-    			
     		}else if(profesoriUserRepository.IsThereOne(username)){
     			if(profesoriUserRepository.validateLogin(username, password)) {
     				
-    				Parent root = FXMLLoader.load(getClass().getResource("/views/HomeProfesori.fxml"));
+    				Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"));
         			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         			scene = new Scene(root);
         			stage.setScene(scene);
         			stage.show();
         			this.EmptyLabel();
     			}else {
-    				this.Wrong();
+    				this.PWrong();
     			}
 
     		}else {
@@ -160,7 +159,12 @@ public class LogInController {
     }
     
     private void Wrong() {
-    	this.lbl2.setText("Password wrong!");
+    	this.lbl2.setText("Student Password wrong!");
+    	this.lbl2.setTextFill(Color.RED);    	
+    }    
+    
+    private void PWrong() {
+    	this.lbl2.setText("Profesor Password wrong!");
     	this.lbl2.setTextFill(Color.RED);    	
     }
     
