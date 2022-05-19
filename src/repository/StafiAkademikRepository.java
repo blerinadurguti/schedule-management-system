@@ -28,4 +28,11 @@ public class StafiAkademikRepository {
 		return obList;
 	}
 	
+	public StafiAkademik findById2(String id) throws SQLException {
+		String query = "SELECT * FROM STAFIAKADEMIK WHERE ID = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return StafiAkademik.fromResultSet(res);
+	}
+	
 }

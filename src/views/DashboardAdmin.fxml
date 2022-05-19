@@ -65,7 +65,7 @@
                      <children>
                         <Pane prefHeight="89.0" prefWidth="176.0">
                            <children>
-                              <Label layoutX="55.0" layoutY="30.0" text="Admin" textFill="WHITE">
+                              <Label fx:id="lblEmri" layoutX="55.0" layoutY="30.0" text="Admin" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

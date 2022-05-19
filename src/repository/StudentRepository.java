@@ -23,6 +23,13 @@ public class StudentRepository {
 		return Studenti.fromResultSet(res);
 	}
 	
+	public Studenti findById2(String id) throws SQLException {
+		String query = "SELECT * FROM STUDENTI WHERE ID = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return Studenti.fromResultSet(res);
+	}
+	
 	public void create(Studenti student) throws Exception {
 		InsertQueryBuilder query = (InsertQueryBuilder)
 				InsertQueryBuilder.create("studenti")

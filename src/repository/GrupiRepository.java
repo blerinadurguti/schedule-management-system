@@ -21,4 +21,11 @@ public class GrupiRepository {
 		return Grupi.fromResultSet(res).getId();
 	}
 	
+	public String getEmriById(int id) throws SQLException {
+		String query = "select * from grupet where id = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();		
+		return Grupi.fromResultSet(res).getEmri() + Grupi.fromResultSet(res).getGr();
+	}
+	
 }

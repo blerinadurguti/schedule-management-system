@@ -42,6 +42,15 @@ public class UserRepository {
 		return User.fromResultSet(res);
 	}
 	
+public int findIdByUsername(String Username) throws SQLException {
+		
+		String a = "'" + Username + "'";
+		String query = "SELECT * FROM User WHERE Username = " + a;
+		ResultSet res = connection.executeQuery(query);
+		res.next();
+		return User.fromResultSet(res).getId();
+	}
+	
 	public boolean IsThereOne(String username) throws SQLException {
 		String a = "'" + username + "'";
 		String query = "SELECT * FROM User WHERE Username = " + a;

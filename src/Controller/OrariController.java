@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -12,12 +13,34 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import processor.CarryProcessor;
 
-public class OrariController {
+public class OrariController implements Initializable{
+	
+	private CarryProcessor c;
+	
 	private Stage stage;
 	private Scene scene;
 	
+	  @FXML
+	    private Label lblEmri;
+	
+	  @Override
+		public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		  try {
+			c = new CarryProcessor();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		  c.SetOrariStaf(lblEmri);
+		  
+		}
+	  
     @FXML
     void Ballina(ActionEvent event) throws IOException {
     	Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"));

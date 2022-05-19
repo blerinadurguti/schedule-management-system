@@ -24,7 +24,7 @@
                      <children>
                         <Pane prefHeight="89.0" prefWidth="176.0">
                            <children>
-                              <Label layoutX="55.0" layoutY="30.0" text="Profesori" textFill="WHITE">
+                              <Label fx:id="lblEmrin" alignment="CENTER" layoutX="3.0" layoutY="30.0" prefWidth="169.0" text="Profesori" textFill="WHITE">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

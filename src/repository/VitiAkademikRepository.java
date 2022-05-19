@@ -46,4 +46,12 @@ public class VitiAkademikRepository {
 		return VitiAkademik.fromResultSet(res).getId();
 	}
 	
+	public String getEmriById(int id) throws SQLException {
+		
+		String query = "SELECT * FROM VITIAKADEMIK WHERE ID = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return VitiAkademik.fromResultSet(res).getViti();
+	}
+	
 }

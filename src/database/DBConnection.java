@@ -97,6 +97,9 @@ public class DBConnection {
 		}
 	}
 	
-	
+	public void executeU(String query) throws SQLException {
+		PreparedStatement pst = this.connection.prepareStatement(query);
+		pst.execute();
+	}
 
 }

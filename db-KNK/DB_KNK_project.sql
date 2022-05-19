@@ -98,7 +98,12 @@ foreign key(Profesori_Asistenti) references StafiAkademik(Id),
 foreign key(Grupi) references Grupet(Id)
 );
 
--- views
+ create table carry(Id int not null,
+ CID varchar(20),
+ primary key(Id)
+ );
+ 
+ -- views
 
 create view studentet as select a.Emri as Emri, a.Mbiemri as Mbiemri, a.StudentId as StudentId, b.Emri as Drejtimi, c.Viti as Viti, d.Emri as Grupi, d.a_b as Nengrupi  from studenti a 
 												join drejtimi b on (a.Drejtimi = b.Id)

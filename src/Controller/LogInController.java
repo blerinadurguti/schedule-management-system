@@ -21,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import processor.Validations;
+import repository.CarryRepository;
 import repository.ProfesoriUserRepository;
 import repository.UserRepository;
 
@@ -34,6 +35,7 @@ public class LogInController {
 	private Alert a = new Alert(AlertType.NONE);
 	private UserRepository userRepository = new UserRepository();
 	private ProfesoriUserRepository profesoriUserRepository = new ProfesoriUserRepository();
+	private CarryRepository carryRepository = new CarryRepository();
 	
     @FXML
     private Label lbl1;
@@ -75,6 +77,7 @@ public class LogInController {
     			if(userRepository.validateLogin(username, password)) {
         			
     				if(username.equals("admin")) {
+    					carryRepository.setId(userRepository.findIdByUsername(username));
     					Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"));
             			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             			scene = new Scene(root);
@@ -82,6 +85,7 @@ public class LogInController {
             			stage.show();
             			this.EmptyLabel();
     				}else {
+   					carryRepository.setId(userRepository.findIdByUsername(username));
         			Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardStudenti.fxml"));
         			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         			scene = new Scene(root);
@@ -96,6 +100,7 @@ public class LogInController {
     		}else if(profesoriUserRepository.IsThereOne(username)){
     			if(profesoriUserRepository.validateLogin(username, password)) {
     				
+    				carryRepository.setId(profesoriUserRepository.findIdByUsername(username));
     				Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"));
         			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         			scene = new Scene(root);
