@@ -3,18 +3,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfiliStudentiController">
+<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NdryshoFjalkaliminStudentiController">
    <children>
       <VBox>
          <children>
@@ -90,50 +90,43 @@
                         </Label>
                      </children>
                   </Pane>
-                  <HBox layoutX="213.0" layoutY="165.0" prefHeight="156.0" prefWidth="435.0">
-                     <children>
-                        <ImageView fitHeight="164.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../Documents/GitHub/KNK_project/src/images/user.png" />
-                           </image>
-                        </ImageView>
-                        <GridPane alignment="CENTER">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label prefHeight="39.0" prefWidth="166.0" text="Emri" textFill="#e80101">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="45.0" prefWidth="202.0" text="Mbiemri" textFill="#e80101" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="BASELINE_LEFT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="195.0" text="Pozita" textFill="#e80101" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblEmri" text="Filan" GridPane.columnIndex="1" />
-                              <Label fx:id="lblMbiemri" text="Fisteku" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label fx:id="lblPozita" text="Student" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           </children>
-                           <padding>
-                              <Insets left="30.0" />
-                           </padding>
-                        </GridPane>
-                     </children>
-                  </HBox>
                   <Button layoutX="360.0" layoutY="380.0" mnemonicParsing="false" onAction="#NdryshoFjalkalimin" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="Ndrysho fjalekalimin" />
+                  <GridPane layoutX="261.0" layoutY="180.0" prefHeight="154.0" prefWidth="338.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.20001220703125" minWidth="10.0" prefWidth="127.1999755859375" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.99998779296877" minWidth="10.0" prefWidth="196.00003662109378" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.99998779296877" minWidth="10.0" prefWidth="40.79996337890623" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Fjalkalimi Aktual" />
+                        <Label text="Fjalkalimi i ri" GridPane.rowIndex="1" />
+                        <Label text="Konfirmo Fjalkalimin" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtFjalkalimiAktual" promptText="Fjalkalimi Aktual" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtFjalkalimiIRi" promptText="Fjalkalimi i ri" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtKonfirmoFjalkalimin" promptText="Konfirmo Fjalkalimin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ImageView fitHeight="27.0" fitWidth="22.0" onMouseClicked="#KFSee" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <image>
+                              <Image url="@../../../../Documents/GitHub/KNK_project/src/images/fjalkalimi.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="27.0" fitWidth="22.0" onMouseClicked="#FSee" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                           <image>
+                              <Image url="@../../../../Documents/GitHub/KNK_project/src/images/fjalkalimi.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
          </children>

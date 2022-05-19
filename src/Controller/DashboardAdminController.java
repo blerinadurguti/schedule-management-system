@@ -12,15 +12,40 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class OrariController {
+public class DashboardAdminController implements Initializable{
+
 	private Stage stage;
 	private Scene scene;
 	
+	 @FXML
+	    private ChoiceBox<String> ChBoxLang;
+	    private String[] Gjuha = {"Shqip","Anglisht"};
+
+		@Override
+		public void initialize(URL arg0, ResourceBundle arg1) {
+			// TODO Auto-generated method stub
+			ChBoxLang.getItems().addAll(this.Gjuha);	
+		}
+
     @FXML
-    void Ballina(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"));
+    private TextField txtSearch;
+
+    @FXML
+    void Oraret(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
+
+
+    @FXML
+    void Profesoret(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("/views/ProfAdmin.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -28,23 +53,10 @@ public class OrariController {
     }
 
     @FXML
-    void Orari(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/Orari.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+    void Search(ActionEvent event) {
+
     }
 
-    @FXML
-    void Profili(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/Profili.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-    }
-    
     @FXML
     void Shkyqu(ActionEvent event) throws IOException {
     	  Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"));
@@ -55,13 +67,12 @@ public class OrariController {
     }
 
     @FXML
-	void ShtoLigjeraten(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/views/shtoLigjeraten.fxml"));
+    void Studentet(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("/views/StudentetAdmin.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-	}
-    
+    }
 
 }

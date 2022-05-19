@@ -70,16 +70,26 @@ public class LogInController {
     	
     		String username = this.txtUsername.getText();
     		String password = this.pswPassword.getText();
-    		    		
+    		 
     		if((userRepository.IsThereOne(username)) && (userRepository.validateLogin(username, password))) {
     			if(userRepository.validateLogin(username, password)) {
         			
-        			Parent root = FXMLLoader.load(getClass().getResource("/views/Home.fxml"));
+    				if(username.equals("admin")) {
+    					Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"));
+            			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            			scene = new Scene(root);
+            			stage.setScene(scene);
+            			stage.show();
+            			this.EmptyLabel();
+    				}else {
+        			Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardStudenti.fxml"));
         			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         			scene = new Scene(root);
         			stage.setScene(scene);
         			stage.show();
         			this.EmptyLabel();
+    				}
+    				
         			}else {
         				this.Wrong();
         			}

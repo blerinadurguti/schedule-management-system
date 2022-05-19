@@ -14,7 +14,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
-public class OrariController {
+public class shtoLigjeratenController {
+
 	private Stage stage;
 	private Scene scene;
 	
@@ -44,7 +45,7 @@ public class OrariController {
 		stage.setScene(scene);
 		stage.show();
     }
-    
+
     @FXML
     void Shkyqu(ActionEvent event) throws IOException {
     	  Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"));
@@ -62,6 +63,5 @@ public class OrariController {
 		stage.setScene(scene);
 		stage.show();
 	}
-    
 
 }

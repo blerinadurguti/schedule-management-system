@@ -19,7 +19,7 @@ public class UserRepository {
 	}
 	
 	// VALIDATION
-	
+		
 	public boolean validateLogin(String username, String password) throws SQLException, NoSuchAlgorithmException {
 		
 		User useri = findByUsername(username);		

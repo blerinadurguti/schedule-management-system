@@ -7,7 +7,7 @@ public class Grupi {
 
 	private int id;
 	private String emri;
-	String gr;
+	private String gr;
 	private int viti;
 	
 	public static Grupi fromResultSet(ResultSet res) {

@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardController">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashboardStudentiController">
    <children>
       <VBox>
          <children>
@@ -108,14 +108,14 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <VBox alignment="BOTTOM_LEFT" prefHeight="274.0" prefWidth="176.0">
+                        <VBox alignment="BOTTOM_LEFT" prefHeight="267.0" prefWidth="176.0">
                            <children>
-                              <ChoiceBox prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #a10702;">
+                              <ChoiceBox fx:id="ChBoxLang" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #a10702;">
                                  <VBox.margin>
                                     <Insets left="23.0" />
                                  </VBox.margin>
                               </ChoiceBox>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Shkyçu" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Shkyçu" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
