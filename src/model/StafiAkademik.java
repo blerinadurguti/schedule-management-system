@@ -33,6 +33,7 @@ public class StafiAkademik {
 		this.id = id;
 		this.emri = emri;
 		this.mbiemri = mbiemri;
+		this.pozita = pozita;
 	}
 
 	public int getId() {

@@ -99,14 +99,12 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="200.0">
+                        <TableView fx:id="ProfesoretTV" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn prefWidth="81.33332824707031" text="Salla" />
-                            <TableColumn prefWidth="84.00006103515625" text="Lënda" />
-                              <TableColumn prefWidth="67.99993896484375" text="Grupi" />
-                              <TableColumn prefWidth="87.33334350585938" text="Viti Akad." />
-                              <TableColumn prefWidth="73.33322143554688" text="Dita" />
-                              <TableColumn prefWidth="86.6666259765625" text="Koha" />
+                            <TableColumn fx:id="col_id" prefWidth="50.0" text="Id" />
+                            <TableColumn fx:id="col_emri" prefWidth="100.0" text="Emri" />
+                              <TableColumn fx:id="col_mbiemri" prefWidth="100.0" text="Mbiemri" />
+                              <TableColumn fx:id="col_pozita" prefWidth="215.0" text="Pozita" />
                           </columns>
                         </TableView>
                      </children>

@@ -27,6 +27,7 @@ public class DashboardStudentiController implements Initializable{
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			// TODO Auto-generated method stub
+			this.ChBoxLang.setValue("Shqip");
 			ChBoxLang.getItems().addAll(this.Gjuha);	
 		}
 

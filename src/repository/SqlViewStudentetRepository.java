@@ -6,23 +6,23 @@ import java.sql.SQLException;
 import database.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.StafiAkademik;
+import model.SqlViewStudentet;
 
-public class StafiAkademikRepository {
+public class SqlViewStudentetRepository {
 
 	private DBConnection connection;
 	
-	public StafiAkademikRepository() {
+	public SqlViewStudentetRepository() {
 		this.connection = DBConnection.getConnection();
 	}
 	
-	public ObservableList<StafiAkademik> getData() throws SQLException{
-		ObservableList<StafiAkademik> obList = FXCollections.observableArrayList();
-		String query = "select * from stafiakademik";
+	public ObservableList<SqlViewStudentet> getData() throws SQLException{
+		ObservableList<SqlViewStudentet> obList = FXCollections.observableArrayList();
+		String query = "select * from studentet";
 		ResultSet res = connection.executeQuery(query);
 		
 		while(res.next()) {
-			obList.add(StafiAkademik.fromResultSet(res));
+			obList.add(SqlViewStudentet.fromResultSet(res));
 		}
 		
 		return obList;
