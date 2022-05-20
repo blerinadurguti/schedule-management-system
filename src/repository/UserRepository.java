@@ -1,6 +1,7 @@
 package repository;
 
 import java.security.NoSuchAlgorithmException;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -33,6 +34,20 @@ public class UserRepository {
 		return false;
 	}
 	
+//	public boolean validateChangePassword(String id, String password) throws SQLException, NoSuchAlgorithmException {
+////		String username = findUsernameById(id);
+////		User useri = findByUsername(username);		
+//		User useri = findById(id);
+//		String salted = useri.getSalted();
+//		String databaseSaltedHash = useri.getSaltedHash();
+//		String inputSaltedHash = saltedHash.generatehash(password, salted);
+//		
+//		if(databaseSaltedHash.equals(inputSaltedHash)) {
+//			return true;
+//			}
+//		return false;
+//	}
+	
 	public User findByUsername(String Username) throws SQLException {
 		
 		String a = "'" + Username + "'";
@@ -40,6 +55,21 @@ public class UserRepository {
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
 		return User.fromResultSet(res);
+	}
+	
+	public User findById(String id) throws SQLException {
+		
+		String query = "SELECT * FROM USER WHERE ID = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return User.fromResultSet(res);
+	}
+	
+	public String findUsernameById(String id) throws SQLException {
+		String query = "SELECT * FROM USER WHERE ID = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return User.fromResultSet(res).getUsername();
 	}
 	
 public int findIdByUsername(String Username) throws SQLException {
@@ -105,6 +135,19 @@ public int findIdByUsername(String Username) throws SQLException {
 		}else {
 		return false;
 		}
+	}
+	
+	//update
+	
+	
+	public void changePassword(String a, String cid) throws NoSuchAlgorithmException, SQLException {
+		SaltedHash s = new SaltedHash();
+		String salted = s.generateSalted();
+		String SaltedHash = s.generatehash(a, salted);
+		String querysh = "Update User set SaltedHash = '" + SaltedHash + "' where id = " + cid;
+		this.connection.executeU(querysh);
+		String querys = "UPDATE USER SET Salted = '" + salted + "' where id = " + cid;
+		this.connection.executeU(querys);
 	}
 	
 }

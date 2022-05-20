@@ -40,5 +40,13 @@ public class Validations {
 		return false;
 		}
 	}
-			
+		
+	public boolean MatchingPasswordsN(String a, String b) {
+		
+		if(a.equals(b)) {
+		return true;	
+		}
+		return false;
+	}
+	
 }

@@ -127,6 +127,7 @@
                         </ImageView>
                      </children>
                   </GridPane>
+                  <Label fx:id="lblError" layoutX="382.0" layoutY="334.0" textFill="RED" />
                </children>
             </AnchorPane>
          </children>

@@ -89,19 +89,27 @@ primary key(Id)
 
 create table Oraret(
 Id integer not null auto_increment,
-Profesori_Asistenti integer,
-Grupi integer,
-Koha time,
-dita integer,
-primary key(Id),
-foreign key(Profesori_Asistenti) references StafiAkademik(Id),
-foreign key(Grupi) references Grupet(Id)
+lenda varchar(50),
+profesori varchar(61),
+grupi varchar(11),
+salla varchar(10),
+dita varchar(10),
+KohaFillimit varchar(5),
+KohaPerfundimit varchar(5),
+primary key(Id)
 );
+
 
  create table carry(Id int not null,
  CID varchar(20),
  primary key(Id)
  );
+ 
+ create table ditet(
+Id int not null auto_increment,
+emri varchar(10),
+primary key(Id)
+);
  
  -- views
 

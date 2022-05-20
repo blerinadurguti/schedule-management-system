@@ -19,7 +19,7 @@ public class CarryRepository {
 		return c.getCID();
 	}
 	
-	private Carry getCarry() throws SQLException {
+	public Carry getCarry() throws SQLException {
 		
 		String query = "Select * from Carry where id = 1";
 		ResultSet res = this.connection.executeQuery(query);
@@ -35,6 +35,5 @@ public class CarryRepository {
 		this.connection.executeU(query);
 		
 	}
-	
 	
 }
