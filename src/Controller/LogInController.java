@@ -22,6 +22,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import processor.GjuhaProcessor;
 import processor.Validations;
 import repository.CarryRepository;
@@ -87,6 +89,8 @@ public class LogInController {
     					Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             			scene = new Scene(root);
             			stage.setScene(scene);
+            			stage.setX(100);
+            			stage.setY(100);
             			stage.show();
             			this.EmptyLabel();
     				}else {
@@ -150,6 +154,78 @@ public class LogInController {
 		stage.show();
     }
 
+    @FXML
+    void login(KeyEvent event) throws NoSuchAlgorithmException, SQLException, IOException {
+    if(event.getCode()== KeyCode.ENTER){
+    if(this.CheckNull()) {
+       
+        String username = this.txtUsername.getText();
+        String password = this.pswPassword.getText();
+       
+        if((userRepository.IsThereOne(username)) && (userRepository.validateLogin(username, password))) {
+        if(userRepository.validateLogin(username, password)) {
+           
+        if(username.equals("admin")) {
+        carryRepository.setId(userRepository.findIdByUsername(username));
+        GjuhaProcessor g = new GjuhaProcessor();
+        Locale locale = new Locale(g.setGjuha());
+        ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+        Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                this.EmptyLabel();
+        }else {
+        carryRepository.setId(userRepository.findIdByUsername(username));
+        GjuhaProcessor g = new GjuhaProcessor();
+        Locale locale = new Locale(g.setGjuha());
+        ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+        Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardStudenti.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            this.EmptyLabel();
+        }
+       
+            }else {
+            this.Wrong();
+            }
+        }else if(profesoriUserRepository.IsThereOne(username)){
+        if(profesoriUserRepository.validateLogin(username, password)) {
+       
+        carryRepository.setId(profesoriUserRepository.findIdByUsername(username));
+        GjuhaProcessor g = new GjuhaProcessor();
+        Locale locale = new Locale(g.setGjuha());
+        ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            this.EmptyLabel();
+        }else {
+        this.PWrong();
+        }
+
+        }else {
+        NotMatching();
+        }
+        }else {
+        if(this.v.NullTextFields(this.txtUsername)) {
+        this.FillLabelErr(this.lbl1);
+        }else {
+        this.FillLabel(this.lbl1);
+        }
+       
+        if(this.v.NullPasswordFields(this.pswPassword)) {
+        this.FillLabelErr(this.lbl2);
+        }else {
+        this.FillLabel(this.lbl2);
+        }
+        }
+    }
+    }
+
+    
     private boolean CheckNull() {
     	
     	boolean a = this.v.NullTextFields(this.txtUsername);

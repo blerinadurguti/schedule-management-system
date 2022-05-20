@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import database.DBConnection;
 import database.InsertQueryBuilder;
+import java_08_nga_profi.Student;
 import model.Studenti;
 import model.User;
 import processor.SaltedHash;

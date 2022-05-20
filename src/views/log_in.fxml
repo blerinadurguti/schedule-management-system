@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
    <children>
       <AnchorPane prefHeight="562.0" prefWidth="814.0">
          <children>
@@ -47,7 +47,7 @@
                      <padding>
                         <Insets left="50.0" />
                      </padding></Label>
-                  <TextField fx:id="txtUsername" maxWidth="250.0" promptText="%promtusername" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtUsername" maxWidth="250.0" onKeyPressed="#login" promptText="%promtusername" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label text="%lblpassword" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets />
@@ -55,7 +55,7 @@
                      <padding>
                         <Insets left="50.0" />
                      </padding></Label>
-                  <PasswordField fx:id="pswPassword" maxWidth="250.0" promptText="%promptpsw" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <PasswordField fx:id="pswPassword" maxWidth="250.0" onKeyPressed="#login" promptText="%promptpsw" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <children>
                         <Button fx:id="btnLogIn" mnemonicParsing="false" onAction="#LogInButton" style="-fx-background-color: #c70202;" text="%loginbttn" textFill="WHITE" />

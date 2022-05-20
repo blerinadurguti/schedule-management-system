@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardController">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardController">
    <children>
       <VBox>
          <children>
@@ -35,19 +35,10 @@
                      <children>
                         <HBox prefHeight="76.0" prefWidth="470.0">
                            <children>
-                              <TextField fx:id="txtSearch" prefHeight="27.0" prefWidth="500.0" style="-fx-border-color: #c70202;" />
-                              <Button mnemonicParsing="false" onAction="#Search" styleClass=".addlecture" stylesheets="@../css/style.css" text="%Searchbttn" textFill="WHITE">
+                              <TextField fx:id="txtSearch" prefHeight="27.0" prefWidth="1000.0" style="-fx-border-color: #c70202;">
                                  <HBox.margin>
-                                    <Insets left="5.0" />
-                                 </HBox.margin>
-                                 <graphic>
-                                    <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/search.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
+                                    <Insets left="15.0" />
+                                 </HBox.margin></TextField>
                            </children>
                         </HBox>
                         <TableView fx:id="OrariTV" prefHeight="292.0" prefWidth="683.0" GridPane.rowIndex="1">
@@ -60,7 +51,7 @@
                               <TableColumn fx:id="col_grupi" prefWidth="75.0" text="%lblGrupi" />
                               <TableColumn fx:id="col_salla" prefWidth="75.0" text="%ClassColumn" />
                               <TableColumn fx:id="col_dita" prefWidth="100.0" text="%DayColumn" />
-                              <TableColumn fx:id="col_kohaFillimit" prefWidth="105.0" text="Koha e fillimit" />
+                              <TableColumn fx:id="col_kohaFillimit" prefWidth="105.0" text="%StartTimeColumn" />
                            </columns>
                         </TableView>
                      </children>
@@ -148,7 +139,7 @@
                   </VBox>
                   <Pane layoutX="176.0" layoutY="42.0" prefHeight="90.0" prefWidth="511.0" style="-fx-background-color: #e80101;" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="-2.0">
                      <children>
-                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="79.0" style="-fx-font-weight: bolder;" text="%lblHome" textFill="WHITE">
+                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="169.0" style="-fx-font-weight: bolder;" text="%lblHome" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>

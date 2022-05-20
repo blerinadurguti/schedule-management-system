@@ -36,6 +36,21 @@ public class CarryRepository {
 		
 	}
 	
+	public void setIdGjuha() throws SQLException {
+		String CID = getIdGjuha();
+		String query;
+		if(CID.equals("0")) {
+			query = "Update Carry set CID = '1' where ID = 3";
+			this.connection.executeU(query);
+		}else if(CID.equals("1")) {
+			query = "UPDATE CARRY SET CID = '0' WHERE ID = 3";
+			this.connection.executeU(query);
+		}else {
+			query = "UPDATE CARRY SET CID = '0' WHERE ID = 3";
+			this.connection.executeU(query);
+		}
+	}
+	
 	public String getIdOraret() throws SQLException {
 		String query = "Select * from Carry where id = 2";
 		ResultSet res = this.connection.executeQuery(query);
