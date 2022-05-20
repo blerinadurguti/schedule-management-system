@@ -87,10 +87,22 @@ Emri varchar(10),
 primary key(Id)
 );
 
+create table TeacherSubjects(
+Id int not null auto_increment,
+profesori int,
+lenda int,
+primary key(Id),
+foreign key(profesori) references stafiakademik(Id),
+foreign key(lenda) references lendet(Id)
+);
+
 create table Oraret(
 Id integer not null auto_increment,
+l_u varchar(20),
+drejtimi varchar(40),
 lenda varchar(50),
 profesori varchar(61),
+viti varchar(10),
 grupi varchar(11),
 salla varchar(10),
 dita varchar(10),
@@ -104,6 +116,8 @@ primary key(Id)
  CID varchar(20),
  primary key(Id)
  );
+ 
+ 
  
  create table ditet(
 Id int not null auto_increment,

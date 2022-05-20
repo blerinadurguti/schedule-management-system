@@ -228,6 +228,12 @@ insert into User(Id,Username,SaltedHash,Salted) value
 
 insert into carry(id,CID)values(1,"defalut");
 
-insert into Oraret(lenda,profesori,grupi,salla,dita,KohaFillimit,KohaPerfundimit)values
-("Gjuhe Angleze","Gazmend Pula","Grupi 1A","A408","E Hene","09:30","11:00"),
-("Gjuhe Angleze","Gazmend Pula","Grupi 2B","A408","E Hene","11:00","12:30");
+-- default data
+insert into Oraret(l_u,drejtimi,lenda,profesori,viti,grupi,salla,dita,KohaFillimit,KohaPerfundimit)values
+("Ligjerat","Automatikë e Kompjuterizuar dhe Robotikë","Gjuhe Angleze","Gazmend Pula","Viti 1","Grupi 1A","A408","E Hene","09:30","11:00"),
+("Ligjerat","Automatikë e Kompjuterizuar dhe Robotikë","Gjuhe Angleze","Gazmend Pula","Viti 1","Grupi 2B","A408","E Hene","11:00","12:30"),
+("Ligjerat","Inxhinieri Kompjuterike","KNK","Isak Shabani","Viti 2","Grupi 1B","A411","E Hene","11:00","12:30");
+
+insert into teachersubjects(profesori,lenda)values
+(8,21),
+(8,17);
