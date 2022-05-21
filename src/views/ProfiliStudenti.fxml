@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfiliStudentiController">
+<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfiliStudentiController">
    <children>
       <VBox>
          <children>
@@ -31,7 +31,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Ballina" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblHome" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -43,7 +43,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Profili" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfile" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -55,7 +55,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Orari" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOrari" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -69,7 +69,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="294.0" prefWidth="176.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Shkyçu" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -83,7 +83,7 @@
                   </VBox>
                   <Pane layoutX="176.0" layoutY="42.0" prefHeight="90.0" prefWidth="511.0" style="-fx-background-color: #e80101;" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="88.0" style="-fx-font-weight: bolder;" text="Profili" textFill="WHITE">
+                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="131.0" style="-fx-font-weight: bolder;" text="%lblProfile" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -94,7 +94,7 @@
                      <children>
                         <ImageView fitHeight="164.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../Documents/GitHub/KNK_project/src/images/user.png" />
+                              <Image url="@../images/user.png" />
                            </image>
                         </ImageView>
                         <GridPane alignment="CENTER" prefHeight="247.0" prefWidth="266.0">
@@ -111,35 +111,35 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label prefHeight="39.0" prefWidth="166.0" text="Emri" textFill="#e80101">
+                              <Label prefHeight="39.0" prefWidth="166.0" text="%lblName" textFill="#e80101">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="45.0" prefWidth="202.0" text="Mbiemri" textFill="#e80101" GridPane.rowIndex="1">
+                              <Label prefHeight="45.0" prefWidth="202.0" text="%lblLastName" textFill="#e80101" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
                               <Label fx:id="lblEmri" text="Filan" GridPane.columnIndex="1" />
                               <Label fx:id="lblMbiemri" text="Fisteku" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label prefHeight="45.0" prefWidth="202.0" text="StudentId" textFill="#e80101" GridPane.rowIndex="2">
+                              <Label prefHeight="45.0" prefWidth="202.0" text="%lblStudentiID" textFill="#e80101" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
                               <Label fx:id="lblStudentId" text="StudentId" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label prefHeight="45.0" prefWidth="202.0" text="Drejtimi" textFill="#e80101" GridPane.rowIndex="3">
+                              <Label prefHeight="42.0" prefWidth="111.0" text="%lblDepartment" textFill="#e80101" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="45.0" prefWidth="202.0" text="Viti" textFill="#e80101" GridPane.rowIndex="4">
+                              <Label prefHeight="45.0" prefWidth="202.0" text="%lblYear" textFill="#e80101" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="45.0" prefWidth="202.0" text="Grupi" textFill="#e80101" GridPane.rowIndex="5">
+                              <Label prefHeight="45.0" prefWidth="202.0" text="%lblGrupi" textFill="#e80101" GridPane.rowIndex="5">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -154,7 +154,7 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <Button layoutX="360.0" layoutY="452.0" mnemonicParsing="false" onAction="#NdryshoFjalkalimin" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="Ndrysho fjalekalimin" />
+                  <Button layoutX="360.0" layoutY="452.0" mnemonicParsing="false" onAction="#NdryshoFjalkalimin" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="%ChangeBttn" />
                </children>
             </AnchorPane>
          </children>

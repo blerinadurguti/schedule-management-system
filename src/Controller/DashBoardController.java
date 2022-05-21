@@ -41,10 +41,11 @@ public class DashBoardController implements Initializable {
 	
     @FXML
     private TextField txtSearch;
-
+    
     @FXML
-    private ChoiceBox<String> ChBoxLang;
-    private String[] Gjuha = {"Shqip","Anglisht"};
+    void Gjuha(ActionEvent event) {
+
+    }
 
     @FXML
     private TableView<Oraret> OrariTV;
@@ -78,8 +79,7 @@ public class DashBoardController implements Initializable {
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		ChBoxLang.getItems().addAll(this.Gjuha);	
+		// TODO Auto-generated method stub	
 		
 		this.col_dita.setCellValueFactory(new PropertyValueFactory<>("dita"));
 		  this.col_kohaFillimit.setCellValueFactory(new PropertyValueFactory<>("kohaFillimit"));
@@ -109,7 +109,6 @@ public class DashBoardController implements Initializable {
 		
 		c.SetDashboardStafi(lblEmri);
 		
-		this.ChBoxLang.setValue("Shqip");
 	}
     
     @FXML

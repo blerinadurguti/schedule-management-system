@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CreateUserController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CreateUserController">
    <children>
       <AnchorPane prefHeight="666.0" prefWidth="799.0">
          <children>
@@ -47,44 +47,44 @@
                <children>
                   <ImageView fitHeight="141.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.columnSpan="3">
                      <image>
-                        <Image url="@../../../../Documents/GitHub/KNK_project/src/images/unipr.png" />
+                        <Image url="@../images/unipr.png" />
                      </image>
                      <GridPane.margin>
                         <Insets bottom="15.0" left="20.0" top="5.0" />
                      </GridPane.margin></ImageView>
-                  <Label prefHeight="18.0" prefWidth="83.0" text="Emri:" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtEmri" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="Emri" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Mbiemri:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label prefHeight="18.0" prefWidth="83.0" text="%lblName" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtEmri" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="%promptName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="%lblLastName" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin>
                   </Label>
-                  <TextField fx:id="txtMbiemri" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="Mbiemri" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtStudentId" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="StudentId" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label text="Drejtimi:" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtMbiemri" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="%promptLastName" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtStudentId" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="%promptStudentID" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="%lblDepartment" GridPane.rowIndex="5" />
                   <ChoiceBox fx:id="ChBoxDrejtimi" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Label text="Viti:" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <Label text="%lblYear" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <padding>
                         <Insets left="35.0" />
                      </padding>
                   </Label>
                   <ChoiceBox fx:id="ChBoxViti" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                  <Label text="Grupi:" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                  <Label text="%lblGrupi" GridPane.columnIndex="4" GridPane.rowIndex="5">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </Label>
                   <ChoiceBox fx:id="ChBoxGrupi" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                  <Label text="Username:" GridPane.rowIndex="7" />
-                  <TextField fx:id="txtUsername" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Label text="Password:" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                  <PasswordField fx:id="pswPassword" promptText="Password" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="7" />
-                  <Label text="Confirm Password:" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                  <PasswordField fx:id="pswConfirmPassword" promptText="Confirm Password" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+                  <Label text="%lblusername" GridPane.rowIndex="7" />
+                  <TextField fx:id="txtUsername" promptText="%promtusername" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="%lblpassword" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <PasswordField fx:id="pswPassword" promptText="%promptpsw" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                  <Label text="%lblConfirmPsw" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <PasswordField fx:id="pswConfirmPassword" promptText="%promptConfirm" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="9" />
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="11">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#CreateEventHandler" style="-fx-background-color: #c70202;" text="Create" textFill="WHITE" />
-                        <Button mnemonicParsing="false" onAction="#ClearEventHandler" style="-fx-background-color: #c70202;" text="Clear" textFill="WHITE" />
+                        <Button mnemonicParsing="false" onAction="#CreateEventHandler" style="-fx-background-color: #c70202;" text="%createbttn" textFill="WHITE" />
+                        <Button mnemonicParsing="false" onAction="#ClearEventHandler" style="-fx-background-color: #c70202;" text="%clearbttn" textFill="WHITE" />
                      </children>
                      <GridPane.margin>
                         <Insets left="15.0" />
@@ -92,12 +92,12 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="12">
                      <children>
-                        <Label text="Already have an account?">
+                        <Label text="%ahanacc">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#LogIn" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Log In" />
+                        <Button mnemonicParsing="false" onAction="#LogIn" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="%loginbttn" />
                      </children>
                   </HBox>
                   <Label fx:id="lblEmri" style="-fx-text-fill: red; -fx-font-size: 13;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
@@ -109,7 +109,7 @@
                   <Label fx:id="lblCPassword" style="-fx-font-size: 13;" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="10" />
                   <Label fx:id="lblMbiemri" style="-fx-text-fill: red; -fx-font-size: 13;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <Label fx:id="lblStudentId" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <Label prefHeight="18.0" prefWidth="83.0" text="StudentId:" GridPane.rowIndex="3" />
+                  <Label prefHeight="18.0" prefWidth="83.0" text="%lblStudentiID" GridPane.rowIndex="3" />
                </children>
                <padding>
                   <Insets bottom="50.0" left="50.0" right="50.0" top="30.0" />

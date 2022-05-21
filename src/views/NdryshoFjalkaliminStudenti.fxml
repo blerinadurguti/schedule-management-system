@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NdryshoFjalkaliminStudentiController">
+<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NdryshoFjalkaliminStudentiController">
    <children>
       <VBox>
          <children>
@@ -31,7 +31,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Ballina" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblHome" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -43,7 +43,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Profili" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfile" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -55,7 +55,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Orari" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOrari" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -69,7 +69,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="269.0" prefWidth="176.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Shkyçu" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -83,14 +83,14 @@
                   </VBox>
                   <Pane layoutX="176.0" layoutY="42.0" prefHeight="90.0" prefWidth="511.0" style="-fx-background-color: #e80101;" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="88.0" style="-fx-font-weight: bolder;" text="Profili" textFill="WHITE">
+                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="133.0" style="-fx-font-weight: bolder;" text="%lblProfile" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
-                  <Button layoutX="360.0" layoutY="380.0" mnemonicParsing="false" onAction="#NdryshoFjalkalimin" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="Ndrysho fjalekalimin" />
+                  <Button layoutX="360.0" layoutY="380.0" mnemonicParsing="false" onAction="#NdryshoFjalkalimin" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="%ChangeBttn" />
                   <GridPane layoutX="261.0" layoutY="180.0" prefHeight="154.0" prefWidth="338.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.20001220703125" minWidth="10.0" prefWidth="127.1999755859375" />
@@ -103,12 +103,12 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label text="Fjalkalimi Aktual" />
-                        <Label text="Fjalkalimi i ri" GridPane.rowIndex="1" />
-                        <Label text="Konfirmo Fjalkalimin" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtFjalkalimiAktual" promptText="Fjalkalimi Aktual" GridPane.columnIndex="1" />
-                        <TextField fx:id="txtFjalkalimiIRi" promptText="Fjalkalimi i ri" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtKonfirmoFjalkalimin" promptText="Konfirmo Fjalkalimin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="%lblCurrent" />
+                        <Label text="%lblNew" GridPane.rowIndex="1" />
+                        <Label text="%Confirmlbl" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtFjalkalimiAktual" promptText="%promptCurrent" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtFjalkalimiIRi" promptText="%promptNew" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtKonfirmoFjalkalimin" promptText="%promptConfirm" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <ImageView fitHeight="27.0" fitWidth="22.0" onMouseClicked="#KFSee" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <image>
                               <Image url="@../../../../Documents/GitHub/KNK_project/src/images/fjalkalimi.png" />

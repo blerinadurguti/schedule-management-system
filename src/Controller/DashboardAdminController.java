@@ -38,12 +38,10 @@ public class DashboardAdminController implements Initializable{
 	   @FXML
 	    private Label lblEmri;
 	   	
-	   
-	 @FXML
-	    private ChoiceBox<String> ChBoxLang;
-	    private String[] Gjuha = {"Shqip","Anglisht"};
+	   @FXML
+	    void Gjuha(ActionEvent event) {
 
-	    
+	    }
 	    @FXML
 	    private TableView<Oraret> OrariTV;
 
@@ -77,7 +75,6 @@ public class DashboardAdminController implements Initializable{
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			// TODO Auto-generated method stub
-			ChBoxLang.getItems().addAll(this.Gjuha);
 			
 			this.col_dita.setCellValueFactory(new PropertyValueFactory<>("dita"));
 			  this.col_kohaFillimit.setCellValueFactory(new PropertyValueFactory<>("kohaFillimit"));
@@ -98,7 +95,6 @@ public class DashboardAdminController implements Initializable{
 			  OrariTV.setItems(oblist);
 			
 			
-			this.ChBoxLang.setValue("Shqip");
 		}
 
     @FXML

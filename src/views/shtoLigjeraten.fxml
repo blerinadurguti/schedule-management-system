@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.shtoLigjeratenController">
+<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.shtoLigjeratenController">
    <children>
       <VBox>
          <children>
@@ -32,7 +32,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Ballina" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblHome" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -44,7 +44,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Profili" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfile" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -56,7 +56,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Orari" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOrari" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -68,21 +68,21 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#ShtoLigjeraten" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Shto Ligjëratën" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#ShtoLigjeraten" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblAdd" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
                            <graphic>
                               <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Documents/GitHub/KNK_project/src/images/plus.png" />
+                                    <Image url="@../images/plus.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="223.0" prefWidth="200.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="46.0" prefWidth="186.0" stylesheets="@../css/style.css" text="Shkyçu" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="46.0" prefWidth="186.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -96,14 +96,14 @@
                   </VBox>
                   <Pane layoutX="176.0" layoutY="42.0" prefHeight="90.0" prefWidth="511.0" style="-fx-background-color: #e80101;" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="-2.0">
                      <children>
-                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="187.0" style="-fx-font-weight: bolder;" text="Shto Ligjëratën" textFill="WHITE">
+                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="187.0" style="-fx-font-weight: bolder;" text="%lblAdd" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
-                  <Button layoutX="361.0" layoutY="422.0" mnemonicParsing="false" onAction="#shtoLigjeratenbtn" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="Shto Ligjëraten" />
+                  <Button layoutX="361.0" layoutY="422.0" mnemonicParsing="false" onAction="#shtoLigjeratenbtn" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="%lblAdd" />
                   <GridPane alignment="CENTER" layoutX="309.0" layoutY="219.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.199951171875" minWidth="10.0" prefWidth="100.0" />
@@ -119,9 +119,9 @@
                         <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Drejtimi" />
-                        <Label text="Lënda" GridPane.rowIndex="2" />
-                        <Label text="Grupi" GridPane.columnIndex="2" />
+                        <Label text="%lblDepartment" />
+                        <Label text="%SubjectColumn" GridPane.rowIndex="2" />
+                        <Label text="%lblGrupi" GridPane.columnIndex="2" />
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
                            <children>
                               <ChoiceBox fx:id="chbdrejtimi" prefWidth="150.0" />
@@ -129,8 +129,8 @@
                               <ChoiceBox fx:id="chbGrupi" prefWidth="150.0" />
                            </children>
                         </HBox>
-                        <Label text="Dita" GridPane.rowIndex="4" />
-                        <Label text="Koha e Fillimit" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Label text="%DayColumn" GridPane.rowIndex="4" />
+                        <Label text="%StartTimeColumn" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
@@ -142,15 +142,15 @@
                               <ChoiceBox fx:id="chbSalla" prefWidth="150.0" />
                            </children>
                         </HBox>
-                        <Label text="Ligjërata/Ushtrime" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Salla" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label text="%lblligj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="%ClassColumn" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
                            <children>
                               <ChoiceBox fx:id="chbDita" prefWidth="150.0" />
                               <ChoiceBox fx:id="chbFillimi" prefWidth="150.0" />
                            </children>
                         </HBox>
-                        <Label text="Viti" GridPane.columnIndex="1" />
+                        <Label text="%lblYear" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>

@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfAdminController">
+<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfAdminController">
    <children>
       <VBox>
          <children>
@@ -32,7 +32,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Oraret" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOraret" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -44,7 +44,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Studentët" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblStudents" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -56,7 +56,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Profesorët" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfessors" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -70,7 +70,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="270.0" prefWidth="176.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Shkyçu" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -84,7 +84,7 @@
                   </VBox>
                   <Pane layoutX="176.0" layoutY="42.0" prefHeight="90.0" prefWidth="511.0" style="-fx-background-color: #e80101;" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="133.0" style="-fx-font-weight: bolder;" text="Profesorët" textFill="WHITE">
+                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="176.0" style="-fx-font-weight: bolder;" text="%lblProfessors" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -101,10 +101,10 @@
                      <children>
                         <TableView fx:id="ProfesoretTV" prefHeight="200.0" prefWidth="200.0">
                           <columns>
-                            <TableColumn fx:id="col_id" prefWidth="50.0" text="Id" />
-                            <TableColumn fx:id="col_emri" prefWidth="100.0" text="Emri" />
-                              <TableColumn fx:id="col_mbiemri" prefWidth="100.0" text="Mbiemri" />
-                              <TableColumn fx:id="col_pozita" prefWidth="215.0" text="Pozita" />
+                            <TableColumn fx:id="col_id" prefWidth="50.0" text="%idlbl" />
+                            <TableColumn fx:id="col_emri" prefWidth="100.0" text="%lblName" />
+                              <TableColumn fx:id="col_mbiemri" prefWidth="100.0" text="%lblLastName" />
+                              <TableColumn fx:id="col_pozita" prefWidth="215.0" text="%lblRole" />
                           </columns>
                         </TableView>
                      </children>

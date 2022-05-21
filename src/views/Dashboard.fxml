@@ -3,7 +3,6 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -19,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardController">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardController">
    <children>
       <VBox>
          <children>
@@ -37,7 +36,7 @@
                         <HBox prefHeight="76.0" prefWidth="470.0">
                            <children>
                               <TextField fx:id="txtSearch" prefHeight="27.0" prefWidth="500.0" style="-fx-border-color: #c70202;" />
-                              <Button mnemonicParsing="false" onAction="#Search" styleClass=".addlecture" stylesheets="@../css/style.css" text="Search" textFill="WHITE">
+                              <Button mnemonicParsing="false" onAction="#Search" styleClass=".addlecture" stylesheets="@../css/style.css" text="%Searchbttn" textFill="WHITE">
                                  <HBox.margin>
                                     <Insets left="5.0" />
                                  </HBox.margin>
@@ -53,14 +52,14 @@
                         </HBox>
                         <TableView fx:id="OrariTV" prefHeight="292.0" prefWidth="683.0" GridPane.rowIndex="1">
                            <columns>
-                              <TableColumn fx:id="col_l_u" prefWidth="150.0" text="L/U" />
-                              <TableColumn fx:id="col_drejtimi" prefWidth="150.0" text="Drejtimi" />
-                              <TableColumn fx:id="col_lenda" prefWidth="150.0" text="Lenda" />
-                              <TableColumn fx:id="col_profesori" prefWidth="150.0" text="Profesori" />
-                              <TableColumn fx:id="col_viti" prefWidth="75.0" text="Viti" />
-                              <TableColumn fx:id="col_grupi" prefWidth="75.0" text="Grupi" />
-                              <TableColumn fx:id="col_salla" prefWidth="75.0" text="Salla" />
-                              <TableColumn fx:id="col_dita" prefWidth="100.0" text="Dita" />
+                              <TableColumn fx:id="col_l_u" prefWidth="150.0" text="%lblL/U" />
+                              <TableColumn fx:id="col_drejtimi" prefWidth="150.0" text="%lblDepartment" />
+                              <TableColumn fx:id="col_lenda" prefWidth="150.0" text="%SubjectColumn" />
+                              <TableColumn fx:id="col_profesori" prefWidth="150.0" text="%ProfColumn" />
+                              <TableColumn fx:id="col_viti" prefWidth="75.0" text="%lblYear" />
+                              <TableColumn fx:id="col_grupi" prefWidth="75.0" text="%lblGrupi" />
+                              <TableColumn fx:id="col_salla" prefWidth="75.0" text="%ClassColumn" />
+                              <TableColumn fx:id="col_dita" prefWidth="100.0" text="%DayColumn" />
                               <TableColumn fx:id="col_kohaFillimit" prefWidth="105.0" text="Koha e fillimit" />
                            </columns>
                         </TableView>
@@ -77,7 +76,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Ballina" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblHome" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -89,7 +88,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Profili" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfile" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -101,7 +100,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Orari" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOrari" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -113,26 +112,29 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#ShtoLigjeraten" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="Shto Ligjëratën" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#ShtoLigjeraten" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblAdd" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
                            <graphic>
                               <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Documents/GitHub/KNK_project/src/images/plus.png" />
+                                    <Image url="@../images/plus.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="223.0" prefWidth="200.0">
                            <children>
-                              <ChoiceBox fx:id="ChBoxLang" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #a10702;">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Gjuha" prefHeight="44.0" prefWidth="179.0" stylesheets="@../css/style.css" text="%gjuhabttn" textFill="WHITE">
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
                                  <VBox.margin>
                                     <Insets left="20.0" />
                                  </VBox.margin>
-                              </ChoiceBox>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="46.0" prefWidth="186.0" stylesheets="@../css/style.css" text="Shkyçu" textFill="WHITE">
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="179.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -146,7 +148,7 @@
                   </VBox>
                   <Pane layoutX="176.0" layoutY="42.0" prefHeight="90.0" prefWidth="511.0" style="-fx-background-color: #e80101;" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="-2.0">
                      <children>
-                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="79.0" style="-fx-font-weight: bolder;" text="Ballina" textFill="WHITE">
+                        <Label layoutX="42.0" layoutY="28.0" prefHeight="35.0" prefWidth="79.0" style="-fx-font-weight: bolder;" text="%lblHome" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
