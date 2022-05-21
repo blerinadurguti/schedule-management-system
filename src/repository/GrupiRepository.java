@@ -2,6 +2,7 @@ package repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import database.DBConnection;
 import model.Grupi;
@@ -12,6 +13,28 @@ public class GrupiRepository {
 	
 	public GrupiRepository() {
 		this.connection = DBConnection.getConnection();
+	}
+	
+	public ArrayList<Grupi> findAllTypes() throws SQLException{
+	String query = "SELECT * FROM GRUPET where id in (1,2,3,4,5,6,7,8,9,10)";
+	ResultSet res = this.connection.executeQuery(query);
+	ArrayList<Grupi> grupi = new ArrayList<Grupi>();	
+	while(res.next()) {
+			grupi.add(Grupi.fromResultSet(res));
+		}
+		return grupi;
+	}
+	
+	public String[] getGrupi() throws SQLException{
+		ArrayList<Grupi> g = findAllTypes();
+		
+		String[] grupet = new String[g.size()];
+		
+		for(int i = 0; i< g.size();i++) {
+			grupet[i] = g.get(i).getEmri() + g.get(i).getGr();
+		}
+		
+		return grupet;
 	}
 	
 	public int getIdByEmri(String grupi,String a_b, int vitiId) throws SQLException {

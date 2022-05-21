@@ -37,7 +37,14 @@ public class DBConnection {
 			return null;
 		}
 	}
+
 	
+	public void ExecuteOraret(String query) throws SQLException {
+		
+		PreparedStatement pst = this.connection.prepareStatement(query);
+		pst.execute();
+		
+	}
 	
 	//INSERT INTO STUDENTS VALUES (1, "STUDENT", "STUDENT", ...)
 	public ResultSet executeQuery(String query) {

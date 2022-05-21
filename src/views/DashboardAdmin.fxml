@@ -23,7 +23,7 @@
    <children>
       <VBox>
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="977.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="1250.0">
                <children>
                   <GridPane layoutX="190.0" layoutY="153.0" prefHeight="330.0" prefWidth="471.0" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="153.0">
                      <columnConstraints>
@@ -36,7 +36,7 @@
                      <children>
                         <HBox prefHeight="76.0" prefWidth="470.0">
                            <children>
-                              <TextField fx:id="txtSearch" prefHeight="27.0" prefWidth="670.0" style="-fx-border-color: #c70202;" />
+                              <TextField fx:id="txtSearch" prefHeight="27.0" prefWidth="500.0" style="-fx-border-color: #c70202;" />
                               <Button mnemonicParsing="false" onAction="#Search" styleClass=".addlecture" stylesheets="@../css/style.css" text="Search" textFill="WHITE">
                                  <HBox.margin>
                                     <Insets left="5.0" />
@@ -53,13 +53,15 @@
                         </HBox>
                         <TableView fx:id="OrariTV" prefHeight="292.0" prefWidth="683.0" GridPane.rowIndex="1">
                            <columns>
+                              <TableColumn fx:id="col_u_l" prefWidth="150.0" text="L\U" />
+                              <TableColumn fx:id="col_drejtimi" prefWidth="150.0" text="Drejtimi" />
                               <TableColumn fx:id="col_lenda" prefWidth="150.0" text="Lenda" />
                               <TableColumn fx:id="col_profesori" prefWidth="150.0" text="Profesori" />
+                              <TableColumn fx:id="col_viti" prefWidth="75.0" text="Viti" />
                               <TableColumn fx:id="col_grupi" prefWidth="75.0" text="Grupi" />
                               <TableColumn fx:id="col_salla" prefWidth="75.0" text="Salla" />
                               <TableColumn fx:id="col_dita" prefWidth="100.0" text="Dita" />
                               <TableColumn fx:id="col_kohaFillimit" prefWidth="105.0" text="Koha e fillimit" />
-                              <TableColumn fx:id="col_kohaMbarimit" prefWidth="105.0" text="Koha e mbarimit" />
                            </columns>
                         </TableView>
                      </children>

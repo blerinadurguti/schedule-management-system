@@ -84,11 +84,6 @@ public class CreateUserController implements Initializable{
 			
 	    	try {
 				ChBoxDrejtimi.getItems().addAll(drejtimetRepository.getDrejtimet());
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    	try {
 				ChBoxViti.getItems().addAll(var.getVitet());
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

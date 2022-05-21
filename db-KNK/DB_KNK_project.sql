@@ -107,7 +107,6 @@ grupi varchar(11),
 salla varchar(10),
 dita varchar(10),
 KohaFillimit varchar(5),
-KohaPerfundimit varchar(5),
 primary key(Id)
 );
 
@@ -125,9 +124,29 @@ emri varchar(10),
 primary key(Id)
 );
  
+ create table kohet(
+Id int not null  auto_increment,
+koha varchar(5),
+primary key(Id)
+);
+ 
  -- views
 
 create view studentet as select a.Emri as Emri, a.Mbiemri as Mbiemri, a.StudentId as StudentId, b.Emri as Drejtimi, c.Viti as Viti, d.Emri as Grupi, d.a_b as Nengrupi  from studenti a 
 												join drejtimi b on (a.Drejtimi = b.Id)
 												join vitiakademik c on (a.Viti = c.Id)
                                                 join grupet d on (a.Grupi = d.Id);
+                                                
+-- procedure
+
+drop procedure if exists checkIfExists;
+delimiter //
+ create procedure checkIfExists(new_drejtimi varchar(40), new_viti varchar(10), new_grupi varchar(11), new_salla varchar(10), new_dita varchar(10), new_koha varchar(5))
+begin
+if exists(select * from oraret where drejtimi = new_drejtimi and viti = new_viti and grupi = new_grupi and salla = new_salla and dita = new_dita and KohaFillimit = new_koha) then
+update carry set CID = 1 where id = 2;
+ else 
+update carry set CID = 0 where id = 2;
+end if;
+end //
+delimiter //;

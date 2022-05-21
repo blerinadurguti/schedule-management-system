@@ -230,13 +230,9 @@ insert into studenti (Emri, Mbiemri) value
 insert into User(Id,Username,SaltedHash,Salted) value
 (1,"admin","1966c0c9281ce8b3d199fe7c2b1a1f49b8e461b80e3a12dda06f0d214ff2ee5f","hsZxr8V2rZOPz6rlE4yfLoGxlIvHwVf36hsXH7XdZrkqjR3rVc8oklwDb1gWIuq0");
 
-insert into carry(id,CID)values(1,"defalut");
+insert into carry(id,CID)values(1,"defalut"),(2,"default");
 
 -- default data
-insert into Oraret(l_u,drejtimi,lenda,profesori,viti,grupi,salla,dita,KohaFillimit,KohaPerfundimit)values
-("Ligjerate","Automatikë e Kompjuterizuar dhe Robotikë","Gjuhe Angleze","Gazmend Pula","Viti 1","Grupi 1A","A408","E Hene","09:30","11:00"),
-("Ligjerate","Automatikë e Kompjuterizuar dhe Robotikë","Gjuhe Angleze","Gazmend Pula","Viti 1","Grupi 2B","A408","E Hene","11:00","12:30"),
-("Ligjerate","Inxhinieri Kompjuterike","KNK","Isak Shabani","Viti 2","Grupi 1B","A411","E Hene","11:00","12:30");
 
 insert into teachersubjects(profesori,lenda)values
 (1,19),
@@ -363,4 +359,22 @@ insert into teachersubjects(profesori,lenda)values
 (63, 10),
 (64, 23);
 
-select * from stafiakademik;
+insert into ditet(emri)values
+("E hëne"),
+("E marte"),
+("E mërkure"),
+("E enjëte"),
+("E premte"),
+("E shtune");
+
+insert into kohet(koha)values
+("07"),
+("08"),
+("09"),
+("10"),
+("11"),
+("12"),
+("13"),
+("14"),
+("15"),
+("16");

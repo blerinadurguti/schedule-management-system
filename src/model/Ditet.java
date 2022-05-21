@@ -11,8 +11,8 @@ public class Ditet {
 	public static Ditet fromResultSet(ResultSet res) {
 		
 		try {
+			String dita = res.getString("emri");
 			int id = res.getInt("id");
-			String dita = res.getString("dita");
 			return new Ditet(id,dita);
 			
 		}catch(SQLException e) {

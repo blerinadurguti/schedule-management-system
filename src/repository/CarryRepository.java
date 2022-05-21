@@ -36,4 +36,11 @@ public class CarryRepository {
 		
 	}
 	
+	public String getIdOraret() throws SQLException {
+		String query = "Select * from Carry where id = 2";
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return Carry.fromReultSet(res).getCID();
+	}
+	
 }

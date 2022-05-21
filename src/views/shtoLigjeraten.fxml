@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -20,18 +21,6 @@
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="685.0">
                <children>
-                  <GridPane layoutX="190.0" layoutY="153.0" prefHeight="330.0" prefWidth="471.0" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="153.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="104.79999389648438" minHeight="10.0" prefHeight="38.39998779296875" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="291.20001220703125" minHeight="10.0" prefHeight="291.20001220703125" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <HBox prefHeight="76.0" prefWidth="470.0" />
-                     </children>
-                  </GridPane>
                   <VBox prefHeight="400.0" prefWidth="176.0" style="-fx-background-color: #c70202;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Pane prefHeight="89.0" prefWidth="176.0">
@@ -114,6 +103,56 @@
                         </Label>
                      </children>
                   </Pane>
+                  <Button layoutX="361.0" layoutY="422.0" mnemonicParsing="false" onAction="#shtoLigjeratenbtn" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../OneDrive/Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="Shto Ligjëraten" />
+                  <GridPane alignment="CENTER" layoutX="309.0" layoutY="219.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.199951171875" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.20001220703125" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.20001220703125" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Drejtimi" />
+                        <Label text="Lënda" GridPane.rowIndex="2" />
+                        <Label text="Grupi" GridPane.columnIndex="2" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                           <children>
+                              <ChoiceBox fx:id="chbdrejtimi" prefWidth="150.0" />
+                              <ChoiceBox fx:id="chbViti" prefWidth="150.0" />
+                              <ChoiceBox fx:id="chbGrupi" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <Label text="Dita" GridPane.rowIndex="4" />
+                        <Label text="Koha e Fillimit" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                           <children>
+                              <ChoiceBox fx:id="chbLenda" prefWidth="150.0" />
+                              <ChoiceBox fx:id="chbL_U" prefWidth="150.0" />
+                              <ChoiceBox fx:id="chbSalla" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <Label text="Ligjërata/Ushtrime" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Salla" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
+                           <children>
+                              <ChoiceBox fx:id="chbDita" prefWidth="150.0" />
+                              <ChoiceBox fx:id="chbFillimi" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <Label text="Viti" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
                </children>
             </AnchorPane>
          </children>

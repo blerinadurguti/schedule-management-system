@@ -12,14 +12,36 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import processor.CarryProcessor;
+import processor.Validations;
+import repository.DrejtimiRepository;
+import repository.GrupiRepository;
+import repository.KohetRepository;
+import repository.LendetRepository;
+import repository.OraretRepository;
+import repository.VitiAkademikRepository;
 
 public class shtoLigjeratenController implements Initializable{
 
+	private Validations v = new Validations();
+	
+	private Alert a = new Alert(AlertType.NONE);
+	
 	private CarryProcessor c;
+	private DrejtimiRepository drejtimetRepository = new DrejtimiRepository();
+	private VitiAkademikRepository vitiAkademik = new VitiAkademikRepository();
+	private GrupiRepository grupiRepository = new GrupiRepository();
+	private LendetRepository lendetRepository = new LendetRepository();
+	private SallaRepository sallaRepository = new SallaRepository();
+	private DitetRepository ditetRepository = new DitetRepository();
+	private KohetRepository kohetRepository = new KohetRepository();
+	private OraretRepository oraretRepository = new OraretRepository();
 	
 	private Stage stage;
 	private Scene scene;
@@ -28,6 +50,33 @@ public class shtoLigjeratenController implements Initializable{
     @FXML
     private Label lblEmri;
 	
+    
+
+    @FXML
+    private ChoiceBox<String> chbDita;
+
+    @FXML
+    private ChoiceBox<String> chbFillimi;    
+    
+    @FXML
+    private ChoiceBox<String> chbGrupi;
+
+    @FXML
+    private ChoiceBox<String> chbL_U;
+    private String[] LU = new String[] {"Ligjeratë" , "Ushtrime"};
+    
+    @FXML
+    private ChoiceBox<String> chbLenda;
+
+    @FXML
+    private ChoiceBox<String> chbSalla;
+
+    @FXML
+    private ChoiceBox<String> chbdrejtimi;
+    
+    @FXML
+    private ChoiceBox<String> chbViti;
+    
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
     	try {
@@ -38,6 +87,21 @@ public class shtoLigjeratenController implements Initializable{
 		}
 		
     	c.SetShtoLigjeraten(lblEmri);
+    	
+    	
+    	try {
+			this.chbdrejtimi.getItems().addAll(drejtimetRepository.getDrejtimet());
+			this.chbViti.getItems().addAll(vitiAkademik.getVitet());
+			this.chbGrupi.getItems().addAll(grupiRepository.getGrupi());
+			this.chbLenda.getItems().addAll(lendetRepository.getLendet());
+			this.chbL_U.getItems().addAll(this.LU);
+			this.chbSalla.getItems().addAll(sallaRepository.getSallat());
+			this.chbDita.getItems().addAll(ditetRepository.getDitet());
+			this.chbFillimi.getItems().addAll(kohetRepository.getKohet());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
 	}
     
@@ -86,4 +150,50 @@ public class shtoLigjeratenController implements Initializable{
 		stage.show();
 	}
 
+    
+    @FXML
+    void shtoLigjeratenbtn(ActionEvent event) throws SQLException {
+
+    	if(checknull()) {
+    		
+    		if(oraretRepository.checkOrariTaken(chbdrejtimi, chbViti, chbGrupi, chbSalla, chbDita, chbFillimi)) {
+    			
+    			oraretRepository.insertOrari(chbdrejtimi, chbViti, chbGrupi, chbLenda, chbL_U, chbSalla, chbDita, chbFillimi);
+    			
+    			this.a.setAlertType(AlertType.CONFIRMATION);
+    			this.a.setContentText("Ligjerata u shtua!");
+    			this.a.show();
+    		}else {
+    			this.a.setAlertType(AlertType.CONFIRMATION);
+    			this.a.setContentText("Orar i zene!");
+    			this.a.show();
+    		}
+    		
+    	}else{
+    		this.a.setAlertType(AlertType.CONFIRMATION);
+			this.a.setContentText("All choice boxes not selected!");
+			this.a.show();
+    	}
+    	
+    }
+    
+    
+    
+    private boolean checknull() {
+    	boolean a = this.v.NullChoiceBox(this.chbDita);
+    	boolean b = this.v.NullChoiceBox(this.chbdrejtimi);
+    	boolean c = this.v.NullChoiceBox(this.chbFillimi);
+    	boolean d = this.v.NullChoiceBox(this.chbGrupi);
+    	boolean e = this.v.NullChoiceBox(this.chbL_U);
+    	boolean f = this.v.NullChoiceBox(this.chbLenda);
+    	boolean g = this.v.NullChoiceBox(this.chbSalla);
+    	boolean h = this.v.NullChoiceBox(this.chbViti);
+    	
+    	if(a || b || c || d || e || f || g || h) {
+    		return false;
+    	}else {
+    		return true;
+    	}
+    }
+    
 }

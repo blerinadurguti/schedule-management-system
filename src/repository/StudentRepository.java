@@ -135,4 +135,18 @@ public class StudentRepository {
 		return Studenti.fromResultSet(res).getGrupi();
 	}
 	
+	public int getDrejtimiById(String id) throws SQLException {
+		String query = "select * from studenti where id = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return Studenti.fromResultSet(res).getDrejtimi();
+	}
+	
+	public int getVitiById(String id) throws SQLException {
+		String query = "select * from studenti where id = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return Studenti.fromResultSet(res).getViti();
+	}
+	
 }

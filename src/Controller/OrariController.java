@@ -49,25 +49,31 @@ public class OrariController implements Initializable{
 	    private TableColumn<Oraret, String> col_kohaFillimit;
 
 	    @FXML
-	    private TableColumn<Oraret, String> col_kohaMbarimit;
-
-	    @FXML
 	    private TableColumn<Oraret, String> col_lenda;
 
 	    @FXML
 	    private TableColumn<Oraret, String> col_salla;
 
-	  
-	  
+	    @FXML
+	    private TableColumn<Oraret, String> col_l_u;
+	    
+	    @FXML
+	    private TableColumn<Oraret, String> col_drejtimi;
+
+	    @FXML
+	    private TableColumn<Oraret, String> vol_viti;
+	    
 	  @Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		  this.col_dita.setCellValueFactory(new PropertyValueFactory<>("dita"));
 		  this.col_kohaFillimit.setCellValueFactory(new PropertyValueFactory<>("kohaFillimit"));
-		  this.col_kohaMbarimit.setCellValueFactory(new PropertyValueFactory<>("kohaMbarimit"));
 		  this.col_lenda.setCellValueFactory(new PropertyValueFactory<>("lenda"));
 		  this.col_salla.setCellValueFactory(new PropertyValueFactory<>("salla"));
 		  this.col_grupi.setCellValueFactory(new PropertyValueFactory<>("grupi"));
+		  this.col_l_u.setCellValueFactory(new PropertyValueFactory<>("l_u"));
+		  this.col_drejtimi.setCellValueFactory(new PropertyValueFactory<>("drejtimi"));
+		  this.vol_viti.setCellValueFactory(new PropertyValueFactory<>("viti"));
 		  
 		  try {
 			  oblist = oraretRepository.getDataP();

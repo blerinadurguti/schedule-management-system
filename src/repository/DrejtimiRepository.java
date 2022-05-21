@@ -20,7 +20,7 @@ public class DrejtimiRepository {
 		ResultSet res = this.connection.executeQuery(query);
 		ArrayList<Drejtimi> drejtimi = new ArrayList<Drejtimi>();
 
-			while(res.next() != false) {
+			while(res.next()) {
 				drejtimi.add(Drejtimi.fromResultSet(res));
 			}
 		return drejtimi;
