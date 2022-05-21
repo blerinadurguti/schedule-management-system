@@ -230,9 +230,9 @@ insert into studenti (Emri, Mbiemri) value
 insert into User(Id,Username,SaltedHash,Salted) value
 (1,"admin","1966c0c9281ce8b3d199fe7c2b1a1f49b8e461b80e3a12dda06f0d214ff2ee5f","hsZxr8V2rZOPz6rlE4yfLoGxlIvHwVf36hsXH7XdZrkqjR3rVc8oklwDb1gWIuq0");
 
-insert into carry(id,CID)values(1,"defalut"),(2,"default");
-
 -- default data
+
+insert into carry(id,CID)values(1,"defalut"),(2,"default"),(3,"0");
 
 insert into teachersubjects(profesori,lenda)values
 (1,19),
