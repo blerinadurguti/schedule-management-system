@@ -32,7 +32,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOraret" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblOraret" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -44,7 +44,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblStudents" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblStudents" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -56,7 +56,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfessors" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblProfessors" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -70,7 +70,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="269.0" prefWidth="176.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>

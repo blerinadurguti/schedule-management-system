@@ -24,7 +24,7 @@
          <children>
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="1250.0">
                <children>
-                  <GridPane layoutX="190.0" layoutY="153.0" prefHeight="330.0" prefWidth="471.0" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="153.0">
+                  <GridPane layoutX="190.0" layoutY="153.0" prefHeight="330.0" prefWidth="471.0" stylesheets="@../css/Dashboard.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="153.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
@@ -67,7 +67,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOraret" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblOraret" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -79,7 +79,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblStudents" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblStudents" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -91,7 +91,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfessors" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblProfessors" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -105,7 +105,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="269.0" prefWidth="176.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Gjuha" prefHeight="44.0" prefWidth="179.0" stylesheets="@../css/style.css" text="%gjuhabttn" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Gjuha" prefHeight="44.0" prefWidth="179.0" stylesheets="@../css/Dashboard.css" text="%gjuhabttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -113,7 +113,7 @@
                                     <Insets left="20.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="179.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="179.0" stylesheets="@../css/Dashboard.css" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -141,6 +141,5 @@
    </children>
    <stylesheets>
       <URL value="@../Css/Dashboard.css" />
-      <URL value="@../../../../Documents/GitHub/KNK_project/src/CSS/Dashboard.css" />
    </stylesheets>
 </AnchorPane>

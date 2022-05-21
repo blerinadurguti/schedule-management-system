@@ -31,7 +31,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblHome" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Ballina" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblHome" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -43,7 +43,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblProfile" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profili" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblProfile" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -55,7 +55,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblOrari" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Orari" prefHeight="45.0" prefWidth="176.0" text="%lblOrari" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -67,7 +67,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#ShtoLigjeraten" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/style.css" text="%lblAdd" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="189.0" mnemonicParsing="false" onAction="#ShtoLigjeraten" prefHeight="45.0" prefWidth="176.0" text="%lblAdd" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -81,7 +81,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="223.0" prefWidth="200.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="46.0" prefWidth="186.0" stylesheets="@../css/style.css" text="%logoutbttn" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="46.0" prefWidth="186.0" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -145,7 +145,7 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <Button layoutX="360.0" layoutY="380.0" mnemonicParsing="false" onAction="#NdryshoFjalkalimin" prefHeight="46.0" prefWidth="141.0" stylesheets="@../../../../Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="%ChangeBttn" />
+                  <Button layoutX="360.0" layoutY="380.0" mnemonicParsing="false" onAction="#NdryshoFjalkalimin" prefHeight="46.0" prefWidth="141.0" stylesheets="@../css/Dashboard.css" text="%ChangeBttn" />
                </children>
             </AnchorPane>
          </children>
