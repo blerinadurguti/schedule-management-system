@@ -43,4 +43,13 @@ public class CarryRepository {
 		return Carry.fromReultSet(res).getCID();
 	}
 	
+	public String getIdGjuha() throws SQLException {
+		
+		String query = "Select * from Carry where id = 3";
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		
+		return Carry.fromReultSet(res).getCID();
+	}
+	
 }

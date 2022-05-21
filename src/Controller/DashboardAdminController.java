@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -23,6 +24,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Oraret;
 import model.Studenti;
+import processor.GjuhaProcessor;
 import repository.OraretRepository;
 
 public class DashboardAdminController implements Initializable{
@@ -103,9 +105,11 @@ public class DashboardAdminController implements Initializable{
     private TextField txtSearch;
 
     @FXML
-    void Oraret(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void Oraret(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -113,9 +117,11 @@ public class DashboardAdminController implements Initializable{
 
 
     @FXML
-    void Profesoret(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/ProfAdmin.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void Profesoret(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/ProfAdmin.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
@@ -127,18 +133,22 @@ public class DashboardAdminController implements Initializable{
     }
 
     @FXML
-    void Shkyqu(ActionEvent event) throws IOException {
-    	  Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"));
-			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void Shkyqu(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
     }
 
     @FXML
-    void Studentet(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/StudentetAdmin.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void Studentet(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/StudentetAdmin.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

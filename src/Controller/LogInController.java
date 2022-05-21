@@ -3,6 +3,8 @@ package Controller;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 
@@ -20,6 +22,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import processor.GjuhaProcessor;
 import processor.Validations;
 import repository.CarryRepository;
 import repository.ProfesoriUserRepository;
@@ -78,16 +81,20 @@ public class LogInController {
         			
     				if(username.equals("admin")) {
     					carryRepository.setId(userRepository.findIdByUsername(username));
-    					Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"));
-            			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    					GjuhaProcessor g = new GjuhaProcessor();
+    					Locale locale = new Locale(g.setGjuha());
+    					ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+    					Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardAdmin.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             			scene = new Scene(root);
             			stage.setScene(scene);
             			stage.show();
             			this.EmptyLabel();
     				}else {
    					carryRepository.setId(userRepository.findIdByUsername(username));
-        			Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardStudenti.fxml"));
-        			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+   					GjuhaProcessor g = new GjuhaProcessor();
+   					Locale locale = new Locale(g.setGjuha());
+   					ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+   					Parent root = FXMLLoader.load(getClass().getResource("/views/DashboardStudenti.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         			scene = new Scene(root);
         			stage.setScene(scene);
         			stage.show();
@@ -101,8 +108,10 @@ public class LogInController {
     			if(profesoriUserRepository.validateLogin(username, password)) {
     				
     				carryRepository.setId(profesoriUserRepository.findIdByUsername(username));
-    				Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"));
-        			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    				GjuhaProcessor g = new GjuhaProcessor();
+    				Locale locale = new Locale(g.setGjuha());
+    				ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+    				Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         			scene = new Scene(root);
         			stage.setScene(scene);
         			stage.show();
@@ -131,9 +140,11 @@ public class LogInController {
     }
     
     @FXML
-    void SignUp(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/CreateUser.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void SignUp(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/CreateUser.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

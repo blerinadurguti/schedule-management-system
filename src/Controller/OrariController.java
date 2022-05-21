@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -22,6 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Oraret;
 import processor.CarryProcessor;
+import processor.GjuhaProcessor;
 import repository.OraretRepository;
 
 public class OrariController implements Initializable{
@@ -96,8 +98,11 @@ public class OrariController implements Initializable{
 		}
 	  
     @FXML
-    void Ballina(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"));
+    void Ballina(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/Dashboard.fxml"),bundle);
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -105,8 +110,11 @@ public class OrariController implements Initializable{
     }
 
     @FXML
-    void Orari(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/Orari.fxml"));
+    void Orari(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/Orari.fxml"),bundle);
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -114,8 +122,11 @@ public class OrariController implements Initializable{
     }
 
     @FXML
-    void Profili(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/Profili.fxml"));
+    void Profili(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/Profili.fxml"),bundle);
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -123,8 +134,11 @@ public class OrariController implements Initializable{
     }
     
     @FXML
-    void Shkyqu(ActionEvent event) throws IOException {
-    	  Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"));
+    void Shkyqu(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"),bundle);
 			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -132,8 +146,11 @@ public class OrariController implements Initializable{
     }
 
     @FXML
-	void ShtoLigjeraten(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/views/shtoLigjeraten.fxml"));
+	void ShtoLigjeraten(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/shtoLigjeraten.fxml"),bundle);
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);

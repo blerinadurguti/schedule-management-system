@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import processor.CreateUserProcessor;
+import processor.GjuhaProcessor;
 import processor.Validations;
 import repository.DrejtimiRepository;
 import repository.StudentRepository;
@@ -156,8 +158,10 @@ public class CreateUserController implements Initializable{
     			this.a.setContentText("User Created!");
     			this.a.show();
     			
-    			Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"));
-    			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    			GjuhaProcessor g = new GjuhaProcessor();
+    			Locale locale = new Locale(g.setGjuha());
+    			ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+    			Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
     			scene = new Scene(root);
     			stage.setScene(scene);
     			stage.show();
@@ -207,9 +211,11 @@ public class CreateUserController implements Initializable{
    }
     
     @FXML
-    void LogIn(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    void LogIn(ActionEvent event) throws IOException, SQLException {
+    	GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/log_in.fxml"),bundle);stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();

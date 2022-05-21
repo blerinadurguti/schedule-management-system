@@ -43,7 +43,7 @@
                         <Insets bottom="30.0" left="136.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <Label text="Username:" GridPane.rowIndex="1">
+                  <Label text="%username" GridPane.rowIndex="1">
                      <padding>
                         <Insets left="50.0" />
                      </padding></Label>

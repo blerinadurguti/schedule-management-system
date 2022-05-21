@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import database.DBConnection;
 import javafx.scene.control.ChoiceBox;
 import model.Studenti;
+import processor.GjuhaProcessor;
 import repository.CarryRepository;
 import repository.GrupiRepository;
 import repository.LendetRepository;
@@ -38,10 +39,13 @@ public class CarryTest {
 //		a.setValue("Taken");
 //		System.out.println(a.getValue());
 	
-		String profesori = stafiAkademikRepository.getProfaById(carryRepository.getId());
+//		String profesori = stafiAkademikRepository.getProfaById(carryRepository.getId());
+//		
+//		System.out.println(profesori);
+	
+		GjuhaProcessor g = new GjuhaProcessor();
 		
-		System.out.println(profesori);
-		
+		System.out.println(g.setGjuha());
 	}
 	
 }
