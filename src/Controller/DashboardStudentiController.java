@@ -22,6 +22,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.Oraret;
 import processor.CarryProcessor;
@@ -211,4 +212,17 @@ public class DashboardStudentiController implements Initializable{
 			stage.show();
     }
 
+    @FXML
+    void action(MouseEvent event) throws IOException, SQLException {
+
+	 GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/smoAbout.fxml"),bundle);	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+	 
+    }
+    
 }
