@@ -130,6 +130,20 @@ koha varchar(5),
 primary key(Id)
 );
  
+ create table filtered(
+Id integer not null auto_increment,
+l_u varchar(20),
+drejtimi varchar(40),
+lenda varchar(50),
+profesori varchar(61),
+viti varchar(10),
+grupi varchar(11),
+salla varchar(10),
+dita varchar(10),
+KohaFillimit varchar(5),
+primary key(Id)
+);
+ 
  -- views
 
 create view studentet as select a.Emri as Emri, a.Mbiemri as Mbiemri, a.StudentId as StudentId, b.Emri as Drejtimi, c.Viti as Viti, d.Emri as Grupi, d.a_b as Nengrupi  from studenti a 
@@ -148,5 +162,62 @@ update carry set CID = 1 where id = 2;
  else 
 update carry set CID = 0 where id = 2;
 end if;
+end //
+delimiter //;
+
+
+drop procedure if exists deleteFiltered;
+delimiter //
+ create procedure deleteFiltered()
+begin
+ SET SQL_SAFE_UPDATES = 0;
+delete from filtered;
+ SET SQL_SAFE_UPDATES = 1;
+end //
+delimiter //;
+
+
+
+drop procedure if exists insertFiltered;
+delimiter //
+ create procedure insertFiltered(new_l_u varchar(20),new_drejtimi varchar(40),new_lenda varchar(50),new_profesori varchar(61),new_viti varchar(10),new_grupi varchar(11),new_salla varchar(10),new_dita varchar(10),new_koha varchar(5))
+begin
+ INSERT INTO filtered(l_u,drejtimi,lenda,profesori,viti,grupi,salla,dita,KohaFillimit)values(new_l_u,new_drejtimi,new_lenda,new_profesori,new_viti,new_grupi,new_salla,new_dita,new_koha);
+end //
+delimiter //;
+
+
+drop procedure if exists deleteStudent;
+delimiter //
+ create procedure deleteStudent(new_id int)
+begin
+ SET SQL_SAFE_UPDATES = 0;
+ delete from user where Id = new_id;
+delete from studenti where Id = new_id;
+ SET SQL_SAFE_UPDATES = 1;
+end //
+delimiter //;
+
+
+drop procedure if exists updateStudent;
+delimiter //
+ create procedure updateStudent(new_id int,new_gid int, new_did int)
+begin
+ SET SQL_SAFE_UPDATES = 0;
+update studenti set drejtimi = new_did where id = new_id;
+update studenti set grupi = new_gid where id = new_id;
+ SET SQL_SAFE_UPDATES = 1;
+end //
+delimiter //;
+
+drop procedure if exists updateProfesori;
+delimiter //
+ create procedure updateProfesori(new_id int,new_emri varchar(30), new_mbiemri varchar(30), new_pozita  varchar(50))
+begin
+ SET SQL_SAFE_UPDATES = 0;
+update stafiakademik set Emri = new_emri where Id = new_id;
+update stafiakademik set Mbiemri = new_mbiemri where Id = new_id;
+update stafiakademik set Pozita = new_pozita where Id = new_id;
+ SET SQL_SAFE_UPDATES = 1;
 end //
 delimiter //;
