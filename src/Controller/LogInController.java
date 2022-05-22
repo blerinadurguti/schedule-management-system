@@ -36,7 +36,6 @@ public class LogInController {
 	private Scene scene;
 	
 	private Validations v = new Validations();
-	//alertin duhet me e hek ne nderkoh me gjasa sna vyn
 	private Alert a = new Alert(AlertType.NONE);
 	private UserRepository userRepository = new UserRepository();
 	private ProfesoriUserRepository profesoriUserRepository = new ProfesoriUserRepository();
