@@ -19,7 +19,7 @@
    <children>
       <VBox>
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="685.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="1249.6">
                <children>
                   <VBox prefHeight="400.0" prefWidth="176.0" style="-fx-background-color: #c70202;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -115,8 +115,8 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Button layoutX="361.0" layoutY="422.0" mnemonicParsing="false" onAction="#shtoLigjeratenbtn" prefHeight="46.0" prefWidth="141.0" text="%lblAdd" />
-                  <GridPane alignment="CENTER" layoutX="309.0" layoutY="219.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
+                  <Button layoutX="485.0" layoutY="421.0" mnemonicParsing="false" onAction="#shtoLigjeratenbtn" prefHeight="46.0" prefWidth="141.0" text="%lblAdd" />
+                  <GridPane alignment="CENTER" layoutX="309.0" layoutY="219.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="150.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.199951171875" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.20001220703125" minWidth="10.0" prefWidth="100.0" />
@@ -134,7 +134,7 @@
                         <Label text="%lblDepartment" />
                         <Label text="%SubjectColumn" GridPane.rowIndex="2" />
                         <Label text="%lblGrupi" GridPane.columnIndex="2" />
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="33.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
                            <children>
                               <ChoiceBox fx:id="chbdrejtimi" prefWidth="150.0" />
                               <ChoiceBox fx:id="chbViti" prefWidth="150.0" />
@@ -147,7 +147,7 @@
                               <Insets />
                            </GridPane.margin>
                         </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="33.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
                            <children>
                               <ChoiceBox fx:id="chbLenda" prefWidth="150.0" />
                               <ChoiceBox fx:id="chbL_U" prefWidth="150.0" />
@@ -156,7 +156,7 @@
                         </HBox>
                         <Label text="%lblligj" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="%ClassColumn" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="33.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="5">
                            <children>
                               <ChoiceBox fx:id="chbDita" prefWidth="150.0" />
                               <ChoiceBox fx:id="chbFillimi" prefWidth="150.0" />

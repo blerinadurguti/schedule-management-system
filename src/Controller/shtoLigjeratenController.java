@@ -50,8 +50,6 @@ public class shtoLigjeratenController implements Initializable{
 	
 	private Stage stage;
 	private Scene scene;
-	
-	private CarryRepository carryRepository = new CarryRepository();
 
     @FXML
     private Label lblEmri;

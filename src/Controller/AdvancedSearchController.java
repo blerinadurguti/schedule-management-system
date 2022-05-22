@@ -35,7 +35,6 @@ import repository.SallaRepository;
 import repository.StafiAkademikRepository;
 import repository.VitiAkademikRepository;
 
-@SuppressWarnings("unused")
 public class AdvancedSearchController implements Initializable{
 
 	private Stage stage;
@@ -54,7 +53,7 @@ public class AdvancedSearchController implements Initializable{
 	
 	   @FXML
 	    private ChoiceBox<String> chbL_u;
-	   private String[] LU = new String[] {"LigjeratÃ«" , "Ushtrime"};
+	   private String[] LU = new String[] {"Ligjerat�" , "Ushtrime"};
 	   
 	    @FXML
 	    private ChoiceBox<String> chbdita;
