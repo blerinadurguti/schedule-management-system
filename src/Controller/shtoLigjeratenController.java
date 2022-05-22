@@ -191,11 +191,19 @@ public class shtoLigjeratenController implements Initializable{
     		
     		if(oraretRepository.checkOrariTaken(chbdrejtimi, chbViti, chbGrupi, chbSalla, chbDita, chbFillimi)) {
     			
+    			if(oraretRepository.checkProfaBusy(chbDita, chbFillimi)) {
+    			
     			oraretRepository.insertOrari(chbdrejtimi, chbViti, chbGrupi, chbLenda, chbL_U, chbSalla, chbDita, chbFillimi);
     			
     			this.a.setAlertType(AlertType.CONFIRMATION);
     			this.a.setContentText("Ligjerata u shtua!");
     			this.a.show();
+    			}else {
+    				this.a.setAlertType(AlertType.CONFIRMATION);
+        			this.a.setContentText("Ju keni ligjerata ne ate kohe!");
+        			this.a.show();
+    			}
+    			
     		}else {
     			this.a.setAlertType(AlertType.CONFIRMATION);
     			this.a.setContentText("Orar i zene!");

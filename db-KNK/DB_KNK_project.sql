@@ -221,3 +221,15 @@ update stafiakademik set Pozita = new_pozita where Id = new_id;
  SET SQL_SAFE_UPDATES = 1;
 end //
 delimiter //;
+
+drop procedure if exists profaBusy;
+delimiter //
+ create procedure profaBusy(new_dita varchar(10),new_koha varchar(5),new_profa varchar(61))
+begin
+if exists(select * from oraret where profesori = new_profa and dita = new_dita and KohaFillimit = new_koha) then
+update carry set CID = 1 where id = 4;
+ else 
+update carry set CID = 0 where id = 4;
+end if;
+end //
+delimiter //;

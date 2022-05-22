@@ -146,6 +146,23 @@ public class OraretRepository {
 		}
 	}
 	
+	public boolean checkProfaBusy(ChoiceBox<String> Cdita ,ChoiceBox<String> Ckoha) throws SQLException {
+		
+		String pid = carryRepository.getId();
+		String profa = stafiAkademikRepository.getProfaById(pid);
+		String dita = Cdita.getValue();
+		String koha = Ckoha.getValue();
+		
+		String query = "Call profaBusy('"+dita+"','"+koha+"','"+profa+"')";		
+		this.connection.ExecuteOraret(query);
+		
+		if(carryRepository.getIdProfaB().equals("0")) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 	public void insertOrari(ChoiceBox<String> Cdrejtimi,ChoiceBox<String> Cviti,
 			ChoiceBox<String> Cgrupi,ChoiceBox<String> CLenda,
 			ChoiceBox<String> Clu, ChoiceBox<String> Csalla,
@@ -160,11 +177,7 @@ public class OraretRepository {
 		String koha = Ckoha.getValue();
 		
 		String profesori = stafiAkademikRepository.getProfaById(carryRepository.getId());
-		
-		//insert into Oraret(l_u,drejtimi,lenda,profesori,viti,grupi,salla,dita,KohaFillimit)
-		//values("Ligjerat","Automatikë e Kompjuterizuar dhe Robotikë","Gjuhe Angleze","Gazmend Pula"
-		//,"Viti 1","Grupi 1A","A408","E hëne","09")
-		
+				
 		String query = "Insert into oraret(l_u,drejtimi,lenda,profesori,viti,grupi,salla,dita,KohaFillimit) values "
 				+ "('" + LU + "','" + drejtimi + "','" + lenda + "','" + profesori + "','" + viti + "','"+ grupi +
 				"','"+ salla +"','"+ dita +"','"+ koha +"')";

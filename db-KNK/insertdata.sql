@@ -232,7 +232,7 @@ insert into User(Id,Username,SaltedHash,Salted) value
 
 -- default data
 
-insert into carry(id,CID)values(1,"defalut"),(2,"default"),(3,"0");
+insert into carry(id,CID)values(1,"defalut"),(2,"default"),(3,"0"),(4,"0");
 
 insert into teachersubjects(profesori,lenda)values
 (1,19),
