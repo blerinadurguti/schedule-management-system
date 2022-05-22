@@ -3,6 +3,7 @@ package repository;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import database.DBConnection;
 import javafx.collections.FXCollections;
@@ -88,6 +89,70 @@ public boolean validateLogin(String username, String password) throws SQLExcepti
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
 		return StafiAkademik.fromResultSet(res).getEmri() + " " + StafiAkademik.fromResultSet(res).getMbiemri();
+	}
+	
+	public String getProfaByIdI(int id) throws SQLException {
+		
+		String query = "select * from stafiakademik where id = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return StafiAkademik.fromResultSet(res).getEmri() + " " + StafiAkademik.fromResultSet(res).getMbiemri();
+	}
+	
+	public ArrayList<StafiAkademik> findAll() throws SQLException{
+		
+		String query = "select * from stafiakademik";
+		ResultSet res = this.connection.executeQuery(query);
+		ArrayList<StafiAkademik> a = new ArrayList<StafiAkademik>();
+		
+		while(res.next()) {
+			a.add(StafiAkademik.fromResultSet(res));
+		}
+		
+		return a;
+	}
+	
+	public String[] getProfa() throws SQLException {
+		
+		ArrayList<StafiAkademik> a = findAll();
+		
+		String[] p = new String[a.size()];
+		
+		for(int i = 0;i < a.size();i++) {
+			p[i] = a.get(i).getEmri() + " " + a.get(i).getMbiemri();
+		}
+		
+		return p;
+	}
+	
+	public void addProfesori(String emri, String mbiemri, String pozita) throws SQLException {
+		String query = "Insert into stafiakademik(emri,mbiemri,pozita)value('"+emri+"','"+mbiemri+"','"+pozita+"')";
+		this.connection.executeU(query);
+	}
+
+	public void updateProfesori(String id, String emri, String mbiemri, String pozita) throws SQLException {
+		String query = "call updateProfesori("+id+",'"+emri+"','"+mbiemri+"','"+pozita+"')";
+		this.connection.executeU(query);
+	}
+	
+	public String[] findAllPozitat() throws SQLException{
+		
+		ArrayList<StafiAkademik> a = new ArrayList<StafiAkademik>();;
+		
+		String query = "SELECT * FROM stafiakademik group by(Pozita)";
+		ResultSet res = this.connection.executeQuery(query);
+		
+		while(res.next()) {
+			a.add(StafiAkademik.fromResultSet(res));
+		}
+		
+		String[] p = new String[a.size()];
+		
+		for(int i = 0;i<a.size();i++) {
+			p[i] = a.get(i).getPozita();
+		}
+		
+		return p;
 	}
 	
 }

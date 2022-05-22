@@ -52,4 +52,11 @@ public class DrejtimiRepository {
 		return Drejtimi.fromResultSet(res).getEmri();	
 	}
 	
+	public String getEmriBySId(String id) throws SQLException {
+		String query = "SELECT * FROM DREJTIMI WHERE ID = " + id;
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();		
+		return Drejtimi.fromResultSet(res).getEmri();	
+	}
+	
 }

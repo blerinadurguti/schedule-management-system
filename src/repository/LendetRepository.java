@@ -30,6 +30,18 @@ public class LendetRepository {
 		return l;
 	}
 	
+	public ArrayList<Lendet> findAll() throws SQLException{
+		String query = "select * from lendet";
+		ResultSet res = this.connection.executeQuery(query);
+		ArrayList<Lendet> l = new ArrayList<Lendet>();
+		
+		while(res.next()) {
+			l.add(Lendet.fromResultSet(res));
+		}
+		
+		return l;
+	}
+	
 	public String id2String(String a) throws SQLException {
 		String b = a;
 		int[] id = teacherSubjectsRepository.getLendaId();
@@ -45,6 +57,18 @@ public class LendetRepository {
 	
 	public String[] getLendet() throws SQLException {
 		ArrayList<Lendet> l = findAllByProfesor();
+		
+		String[] lendet = new String[l.size()];
+		
+		for(int i = 0;i < l.size();i++) {
+			lendet[i] = l.get(i).getEmri();
+		}
+		
+		return lendet;
+	}
+	
+	public String[] getAllLendet() throws SQLException {
+		ArrayList<Lendet> l = findAll();
 		
 		String[] lendet = new String[l.size()];
 		

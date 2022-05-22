@@ -157,5 +157,15 @@ public class OrariController implements Initializable{
 		stage.show();
 	}
     
-
+    @FXML
+    void search(ActionEvent event) throws SQLException, IOException {
+	 GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/AdvancedSearch.fxml"),bundle);	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+    }
+    
 }

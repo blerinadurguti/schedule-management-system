@@ -24,7 +24,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Oraret;
-import model.Studenti;
 import processor.GjuhaProcessor;
 import repository.CarryRepository;
 import repository.OraretRepository;
@@ -74,7 +73,6 @@ public class DashboardAdminController implements Initializable{
 	    
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
-			// TODO Auto-generated method stub
 			
 			try {
 				  this.col_dita.setCellValueFactory(new PropertyValueFactory<>("dita"));

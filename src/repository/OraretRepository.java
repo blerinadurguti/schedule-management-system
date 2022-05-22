@@ -2,6 +2,7 @@ package repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import database.DBConnection;
 import javafx.collections.FXCollections;
@@ -37,6 +38,45 @@ public class OraretRepository {
 			oblist.add(Oraret.fromResultSet(res));
 		}
 		return oblist;
+	}
+	
+	public void setFilteredData(ArrayList<Oraret> a) throws SQLException {
+		
+		String query1 = "Call deleteFiltered()";
+		
+		this.connection.executeU(query1);
+		
+		for(int i = 0; i < a.size();i++) {
+			String query = "CALL insertFiltered('" + a.get(i).getL_u() + "','"+ a.get(i).getDrejtimi() 
+												+"','"+ a.get(i).getLenda() +"','"+ a.get(i).getProfesori()
+												+"','"+ a.get(i).getViti() +"','"+ a.get(i).getGrupi()
+												+"','"+ a.get(i).getSalla() +"','"+ a.get(i).getDita()
+												+"','"+ a.get(i).getKohaFillimit() +"')";
+			this.connection.executeU(query);
+		}
+		
+	}
+	
+	public void getFilteredData(String dita,String drejtimi,String grupi,String koha,
+			String lenda, String profesori,String salla, String viti,String lu) throws SQLException{
+				
+		String query = "select * from oraret where dita like '%"+ dita
+										+"%' and drejtimi like '%"+ drejtimi 
+										+"%' and grupi like '%"+ grupi 
+										+"%' and KohaFillimit like '%"+ koha
+										+"%' and lenda like '%"+ lenda
+										+"%' and l_u like '%"+ lu
+										+"%' and profesori like '%"+ profesori
+										+"%' and salla like '%"+ salla
+										+"%' and viti like '%"+ viti +"%'";
+		
+		ArrayList<Oraret> oblist = new ArrayList<Oraret>();
+		ResultSet res = connection.executeQuery(query);
+		
+		while(res.next()) {
+			oblist.add(Oraret.fromResultSet(res));
+		}
+		setFilteredData(oblist);
 	}
 	
 	public ObservableList<Oraret> getDataS() throws SQLException{

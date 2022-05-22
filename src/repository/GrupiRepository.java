@@ -58,4 +58,12 @@ public class GrupiRepository {
 		return Grupi.fromResultSet(res).getEmri() + Grupi.fromResultSet(res).getGr();
 	}
 	
+	public String getGrupiPjesa1(String grupi) {	
+		return grupi.substring(0,7);
+	}	
+	
+	public String getNenGrupi(String grupi) {
+		return grupi.substring(7,8);
+	}
+	
 }

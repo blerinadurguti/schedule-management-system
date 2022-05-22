@@ -2,24 +2,27 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentetAdminController">
+<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentetAdminController">
    <children>
       <VBox>
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="943.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="1249.6">
                <children>
                   <VBox prefHeight="400.0" prefWidth="176.0" style="-fx-background-color: #c70202;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -32,7 +35,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblOraret" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" text="%lblOraret" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -44,7 +47,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblStudents" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" text="%lblStudents" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -56,7 +59,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblProfessors" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" text="%lblProfessors" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -70,7 +73,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="269.0" prefWidth="176.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%logoutbttn" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -91,7 +94,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <GridPane layoutX="190.0" layoutY="173.0" prefHeight="314.0" prefWidth="739.0">
+                  <GridPane layoutX="190.0" layoutY="159.0" prefHeight="348.0" prefWidth="739.0" AnchorPane.bottomAnchor="17.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -99,7 +102,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TableView fx:id="StudentetTV" prefHeight="314.0" prefWidth="478.0">
+                        <TableView fx:id="StudentetTV" prefHeight="321.0" prefWidth="739.0">
                           <columns>
                             <TableColumn fx:id="col_emri" prefWidth="100.0" text="%lblName" />
                             <TableColumn fx:id="col_mbiemri" prefWidth="100.0" text="%lblLastName" />
@@ -112,6 +115,34 @@
                         </TableView>
                      </children>
                   </GridPane>
+                  <GridPane alignment="CENTER" layoutX="950.0" layoutY="232.0" AnchorPane.leftAnchor="950.0" AnchorPane.rightAnchor="20.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.2000732421875" minWidth="10.0" prefWidth="95.0000244140625" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.199951171875" minWidth="10.0" prefWidth="183.79997558593746" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="%lblDepartment" GridPane.rowIndex="1" />
+                        <Label text="%lblGrupi" GridPane.rowIndex="2" />
+                        <ChoiceBox fx:id="chbDrejtimi" prefHeight="26.0" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ChoiceBox fx:id="chbGrupi" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="%lblStudentiID" />
+                        <TextField fx:id="txtStudentId" promptText="%lblStudentiID" GridPane.columnIndex="1" />
+                        <Label text="%lblYear" GridPane.rowIndex="3" />
+                        <ChoiceBox fx:id="chbviti" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER" layoutX="972.0" layoutY="170.0" prefHeight="46.0" prefWidth="234.0" spacing="15.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#remove" text="%btnremove" />
+                        <Button mnemonicParsing="false" onAction="#update" style="-fx-background-color: grey;" text="%btnupdate" />
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
          </children>

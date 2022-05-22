@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import database.DBConnection;
 import database.InsertQueryBuilder;
+import java_08_nga_profi.Student;
 import model.Studenti;
 import model.User;
 import processor.SaltedHash;
@@ -15,6 +16,9 @@ public class StudentRepository {
 
 	private DBConnection connection;
 	private SaltedHash saltedHash = new SaltedHash();
+	private DrejtimiRepository drejtimiRepository = new DrejtimiRepository();
+	private GrupiRepository grupiRepository = new GrupiRepository();
+	private VitiAkademikRepository vitiAkademikRepository = new VitiAkademikRepository();
 	
 	public StudentRepository() {
 		this.connection = DBConnection.getConnection();
@@ -146,6 +150,36 @@ public class StudentRepository {
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
 		return Studenti.fromResultSet(res).getViti();
+	}
+	
+	public int getIdBySid(String StudentId) throws SQLException {
+		
+		String query = "Select * from studenti where StudentId = '"+StudentId+"'";
+		ResultSet res = this.connection.executeQuery(query);
+		res.next();
+		return Studenti.fromResultSet(res).getId();
+	}
+	
+	public void RemoveBySId(String StudentId) throws SQLException {
+		
+		int id = getIdBySid(StudentId);
+		
+		String query = "Call deleteStudent("+id+")";
+		this.connection.executeU(query);
+		
+	}
+	
+	public void UpdateBySId(String StudentId, String drejtimi, String grupi,String viti) throws SQLException {
+		
+		int id = getIdBySid(StudentId);
+		int did = drejtimiRepository.getIdByEmri(drejtimi);
+		int vid = vitiAkademikRepository.getIdByEmri(viti);
+		String grup = grupiRepository.getGrupiPjesa1(grupi);
+		String gr = grupiRepository.getNenGrupi(grupi);
+		int gid = grupiRepository.getIdByEmri(grup, gr, vid);
+		
+		String query = "call updateStudent("+id+","+gid+","+did+")";
+		this.connection.executeU(query);		
 	}
 	
 }

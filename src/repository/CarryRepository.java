@@ -4,14 +4,55 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import database.DBConnection;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.PieChart;
 import model.Carry;
+import model.Studenti;
+import model.Grupi;
 
 public class CarryRepository {
 
 	private DBConnection connection;
+	private GrupiRepository grupiRepository = new GrupiRepository();
+	private DrejtimiRepository drejtimiRepository = new DrejtimiRepository();
+	private VitiAkademikRepository vitiAkademikRepository = new VitiAkademikRepository();
+	private StudentRepository studentRepository = new StudentRepository();
+	private StafiAkademikRepository stafiAkademikRepository = new StafiAkademikRepository();
 	
 	public CarryRepository() {
 		this.connection = DBConnection.getConnection();
+	}
+	
+	public int getNrLigj(String dita) throws SQLException {
+		String id = getId();
+		String grupi = grupiRepository.getEmriById(studentRepository.getGrupiById(id));
+		String drejtimi = drejtimiRepository.getEmriById(studentRepository.getDrejtimiById(id));
+		String viti = vitiAkademikRepository.getEmriById(studentRepository.getVitiById(id));
+		
+		String query = "Select * from oraret where grupi = '"+grupi+"' and drejtimi = '"+drejtimi
+															+"' and viti = '"+viti
+															+"' and dita = '"+dita+"'";
+		ResultSet res = this.connection.executeQuery(query);
+		int count = 0;
+		while(res.next()) {
+			count++;
+		}
+		
+		return count;
+	}
+		
+	public int getNrLigjProf(String dita) throws SQLException {
+		String id = getId();
+		String profesori = stafiAkademikRepository.getProfaById(id);
+		
+		String query = "Select * from oraret where profesori = '"+profesori+"' and dita = '"+dita+"'";
+		
+		ResultSet res = this.connection.executeQuery(query);
+		int count = 0;
+		while(res.next()) {
+			count++;
+		}
+		return count;
 	}
 	
 	public String getId() throws SQLException {

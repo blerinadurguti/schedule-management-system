@@ -111,6 +111,7 @@ public class LogInController {
     			if(profesoriUserRepository.validateLogin(username, password)) {
     				
     				carryRepository.setId(profesoriUserRepository.findIdByUsername(username));
+    				
     				GjuhaProcessor g = new GjuhaProcessor();
     				Locale locale = new Locale(g.setGjuha());
     				ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);

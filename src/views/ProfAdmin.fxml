@@ -2,24 +2,27 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfAdminController">
+<AnchorPane stylesheets="@../Css/Dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfAdminController">
    <children>
       <VBox>
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="685.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="1249.6">
                <children>
                   <VBox prefHeight="400.0" prefWidth="176.0" style="-fx-background-color: #c70202;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -32,7 +35,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblOraret" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#Oraret" prefHeight="45.0" prefWidth="176.0" text="%lblOraret" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -44,7 +47,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblStudents" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Studentet" prefHeight="44.0" prefWidth="176.0" text="%lblStudents" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -56,7 +59,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%lblProfessors" textFill="WHITE">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Profesoret" prefHeight="45.0" prefWidth="176.0" text="%lblProfessors" textFill="WHITE">
                            <padding>
                               <Insets left="50.0" />
                            </padding>
@@ -70,7 +73,7 @@
                         </Button>
                         <VBox alignment="BOTTOM_LEFT" prefHeight="270.0" prefWidth="176.0">
                            <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" stylesheets="@../css/Dashboard.css" text="%logoutbttn" textFill="WHITE">
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#Shkyqu" prefHeight="44.0" prefWidth="176.0" text="%logoutbttn" textFill="WHITE">
                                  <padding>
                                     <Insets left="50.0" />
                                  </padding>
@@ -91,7 +94,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <GridPane layoutX="190.0" layoutY="173.0" prefHeight="314.0" prefWidth="482.0">
+                  <GridPane layoutX="190.0" layoutY="153.0" prefHeight="353.0" prefWidth="482.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -107,6 +110,34 @@
                               <TableColumn fx:id="col_pozita" prefWidth="215.0" text="%lblRole" />
                           </columns>
                         </TableView>
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER" layoutX="778.0" layoutY="173.0" prefHeight="46.0" prefWidth="393.0" spacing="15.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#add" style="-fx-background-color: green;" text="%btnadd" />
+                        <Button mnemonicParsing="false" onAction="#update" style="-fx-background-color: grey;" text="%btnupdate" />
+                     </children>
+                  </HBox>
+                  <GridPane layoutX="770.0" layoutY="247.0" AnchorPane.leftAnchor="770.0" AnchorPane.rightAnchor="70.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="%idlbl" />
+                        <Label text="%lblName" GridPane.rowIndex="1" />
+                        <Label text="%lblLastName" GridPane.rowIndex="2" />
+                        <Label text="%lblRole" GridPane.rowIndex="3" />
+                        <ChoiceBox fx:id="chbRole" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtMbiemri" promptText="%lblLastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtEmri" promptText="%lblName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtId" promptText="%idlbl" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                </children>

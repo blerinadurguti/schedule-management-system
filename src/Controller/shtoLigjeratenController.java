@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import processor.CarryProcessor;
 import processor.GjuhaProcessor;
 import processor.Validations;
+import repository.CarryRepository;
 import repository.DitetRepository;
 import repository.DrejtimiRepository;
 import repository.GrupiRepository;
@@ -50,6 +51,7 @@ public class shtoLigjeratenController implements Initializable{
 	private Stage stage;
 	private Scene scene;
 	
+	private CarryRepository carryRepository = new CarryRepository();
 
     @FXML
     private Label lblEmri;
@@ -101,7 +103,7 @@ public class shtoLigjeratenController implements Initializable{
 			this.chbL_U.getItems().addAll(this.LU);
 			this.chbSalla.getItems().addAll(sallaRepository.getSallat());
 			this.chbDita.getItems().addAll(ditetRepository.getDitet());
-			this.chbFillimi.getItems().addAll(kohetRepository.getKohet());
+			this.chbFillimi.getItems().addAll(kohetRepository.getKohet());			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -157,6 +159,18 @@ public class shtoLigjeratenController implements Initializable{
 			stage.show();
     }
 
+    
+    @FXML
+    void search(ActionEvent event) throws SQLException, IOException {
+	 GjuhaProcessor g = new GjuhaProcessor();
+		Locale locale = new Locale(g.setGjuha());
+		ResourceBundle bundle = ResourceBundle.getBundle("resources.gjuha",locale);
+		Parent root = FXMLLoader.load(getClass().getResource("/views/AdvancedSearch.fxml"),bundle);	stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+    }
+    
     @FXML
 	void ShtoLigjeraten(ActionEvent event) throws IOException, SQLException {
     	GjuhaProcessor g = new GjuhaProcessor();

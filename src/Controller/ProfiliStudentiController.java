@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,14 +15,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import processor.CarryProcessor;
 import processor.GjuhaProcessor;
+import repository.CarryRepository;
 
 public class ProfiliStudentiController implements Initializable{
 
 	private CarryProcessor c;
+	private CarryRepository carryRepository = new CarryRepository();
 	
 	private Stage stage;
 	private Scene scene;
@@ -45,6 +50,9 @@ public class ProfiliStudentiController implements Initializable{
 
     @FXML
     private Label lblgrupi;
+    
+    @FXML
+    private PieChart piechart;
 
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -62,7 +70,26 @@ public class ProfiliStudentiController implements Initializable{
 			e.printStackTrace();
 		}
 		
-	}
+		ObservableList<PieChart.Data> pieData;
+		try {
+			pieData = FXCollections.observableArrayList(
+					new PieChart.Data("E hënë", carryRepository.getNrLigj("E hëne")),
+					new PieChart.Data("E martë", carryRepository.getNrLigj("E marte")),
+					new PieChart.Data("E mërkurë", carryRepository.getNrLigj("E mërkure")),
+					new PieChart.Data("E enjtë", carryRepository.getNrLigj("E enjëte")),
+					new PieChart.Data("E premtë", carryRepository.getNrLigj("E premte")),
+					new PieChart.Data("E shtunë", carryRepository.getNrLigj("E shtune"))
+					);
+		
+			piechart.setData(pieData);
+			piechart.setTitle("Ligjerata/Dite");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+    }
     
     @FXML
     void Ballina(ActionEvent event) throws IOException, SQLException {
