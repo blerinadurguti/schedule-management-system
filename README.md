@@ -23,7 +23,7 @@ Zhvilimi i GUI: JavaFX
 
 ●  Besarta Kurtaj
 
-●  Bleona Jashari @bleonajashari
+●  Bleona Jashari
 
 ●  Blerina Durguti
 
