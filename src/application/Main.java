@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import processor.GjuhaProcessor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 public class Main extends Application {
 	@Override
@@ -23,6 +24,9 @@ public class Main extends Application {
 			stage.setX(100);
 			stage.setY(100);
 			stage.show();
+			stage.setTitle("SMO FIEK");
+			Image icon = new Image("/images/unipr.png");
+			stage.getIcons().add(icon);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
