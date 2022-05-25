@@ -13,12 +13,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -36,7 +33,6 @@ public class LogInController {
 	private Scene scene;
 	
 	private Validations v = new Validations();
-	private Alert a = new Alert(AlertType.NONE);
 	private UserRepository userRepository = new UserRepository();
 	private ProfesoriUserRepository profesoriUserRepository = new ProfesoriUserRepository();
 	private CarryRepository carryRepository = new CarryRepository();

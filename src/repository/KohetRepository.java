@@ -23,7 +23,7 @@ private DBConnection connection;
 		while(res.next()) {
 			k.add(Kohet.fromResultSet(res));
 		}
-		
+		res.close();
 		return k;
 	}
 	

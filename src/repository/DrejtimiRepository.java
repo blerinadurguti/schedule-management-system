@@ -23,6 +23,7 @@ public class DrejtimiRepository {
 			while(res.next()) {
 				drejtimi.add(Drejtimi.fromResultSet(res));
 			}
+			res.close();
 		return drejtimi;
 	}
 	
@@ -42,21 +43,27 @@ public class DrejtimiRepository {
 		String query = "SELECT * FROM DREJTIMI WHERE EMRI = '" + drejtimi + "'";
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();		
-		return Drejtimi.fromResultSet(res).getId();
+		int i = Drejtimi.fromResultSet(res).getId(); 
+		res.close();
+		return i;
 	}
 	
 	public String getEmriById(int id) throws SQLException {
 		String query = "SELECT * FROM DREJTIMI WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();		
-		return Drejtimi.fromResultSet(res).getEmri();	
+		String s = Drejtimi.fromResultSet(res).getEmri();	
+		res.close();
+		return s;
 	}
 	
 	public String getEmriBySId(String id) throws SQLException {
 		String query = "SELECT * FROM DREJTIMI WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();		
-		return Drejtimi.fromResultSet(res).getEmri();	
+		String s = Drejtimi.fromResultSet(res).getEmri();
+		res.close();
+		return s;
 	}
 	
 }

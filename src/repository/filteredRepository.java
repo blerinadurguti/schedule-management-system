@@ -25,7 +25,7 @@ public class filteredRepository {
 		while(res.next()) {
 			f.add(filtered.fromResultSet(res));
 		}
-		
+		res.close();
 		return f;
 	}
 	

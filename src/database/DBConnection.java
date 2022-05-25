@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 public class DBConnection {	
 	private static String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
@@ -18,7 +17,7 @@ public class DBConnection {
 	public static DBConnection getConnection() {
 		return new DBConnection();
 	}
-	
+		
 	private DBConnection() {
 		this.connection = this.initConnection();
 	}
@@ -43,6 +42,7 @@ public class DBConnection {
 		
 		PreparedStatement pst = this.connection.prepareStatement(query);
 		pst.execute();
+		pst.close();
 		
 	}
 	
@@ -107,6 +107,7 @@ public class DBConnection {
 	public void executeU(String query) throws SQLException {
 		PreparedStatement pst = this.connection.prepareStatement(query);
 		pst.execute();
+		pst.close();
 	}
 
 }

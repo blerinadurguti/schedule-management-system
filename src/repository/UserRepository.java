@@ -1,10 +1,8 @@
 package repository;
 
 import java.security.NoSuchAlgorithmException;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import database.DBConnection;
 import database.InsertQueryBuilder;
 import model.User;
@@ -54,7 +52,9 @@ public class UserRepository {
 		String query = "SELECT * FROM User WHERE Username = " + a;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return User.fromResultSet(res);
+		User u = User.fromResultSet(res);
+		res.close();
+		return u;
 	}
 	
 	public User findById(String id) throws SQLException {
@@ -62,14 +62,18 @@ public class UserRepository {
 		String query = "SELECT * FROM USER WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return User.fromResultSet(res);
+		User u = User.fromResultSet(res);
+		res.close();
+		return u;
 	}
 	
 	public String findUsernameById(String id) throws SQLException {
 		String query = "SELECT * FROM USER WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return User.fromResultSet(res).getUsername();
+		String s = User.fromResultSet(res).getUsername();
+		res.close();
+		return s;
 	}
 	
 public int findIdByUsername(String Username) throws SQLException {
@@ -78,15 +82,18 @@ public int findIdByUsername(String Username) throws SQLException {
 		String query = "SELECT * FROM User WHERE Username = " + a;
 		ResultSet res = connection.executeQuery(query);
 		res.next();
-		return User.fromResultSet(res).getId();
+		int i = User.fromResultSet(res).getId(); 
+		res.close();
+		return i;
 	}
 	
 	public boolean IsThereOne(String username) throws SQLException {
 		String a = "'" + username + "'";
 		String query = "SELECT * FROM User WHERE Username = " + a;
 		ResultSet res = this.connection.executeQuery(query);
-		
-		if(res.next()) {
+		boolean b = res.next();
+		res.close();
+		if(b) {
 			return true;
 		}
 		return false;
@@ -103,13 +110,7 @@ public int findIdByUsername(String Username) throws SQLException {
 				.add("salted", user.getSalted(), "s");
 		
 		int lastInsertedId = this.connection.execute(query);
-//		User createdUser = this.findById(lastInsertedId);
-//		
-//		if(createdUser != null) {
-//			return createdUser;
-//		}
-//		
-//		throw new Exception("User failed to create!");
+
 	}
 	
 	
@@ -122,15 +123,18 @@ public int findIdByUsername(String Username) throws SQLException {
 		String query = "SELECT * FROM USER WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return User.fromResultSet(res);
+		User u = User.fromResultSet(res);
+		res.close();
+		return u;
 	}
 	
 	
 	public boolean checkIfUsernameExists(String username) throws SQLException {
 		String query = "SELECT * FROM USER WHERE USERNAME = '" + username + "'";
 		ResultSet res = this.connection.executeQuery(query);
-		
-		if(res.next()) {
+		boolean b = res.next();
+		res.close();
+		if(b) {
 			return true;
 		}else {
 		return false;

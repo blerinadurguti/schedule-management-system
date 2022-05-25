@@ -9,7 +9,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 import model.Oraret;
-import model.Studenti;
 
 public class OraretRepository {
 
@@ -37,6 +36,7 @@ public class OraretRepository {
 		while(res.next()) {
 			oblist.add(Oraret.fromResultSet(res));
 		}
+		res.close();
 		return oblist;
 	}
 	
@@ -76,6 +76,7 @@ public class OraretRepository {
 		while(res.next()) {
 			oblist.add(Oraret.fromResultSet(res));
 		}
+		res.close();
 		setFilteredData(oblist);
 	}
 	
@@ -91,6 +92,7 @@ public class OraretRepository {
 		while(res.next()) {
 			oblist.add(Oraret.fromResultSet(res));
 		}
+		res.close();
 		return oblist;
 	}
 	
@@ -103,6 +105,7 @@ public class OraretRepository {
 		while(res.next()) {
 			oblist.add(Oraret.fromResultSet(res));
 		}
+		res.close();
 		return oblist;
 	}
 	
@@ -163,6 +166,25 @@ public class OraretRepository {
 		}
 	}
 	
+	public boolean checkGrupi(ChoiceBox<String> Cdita ,ChoiceBox<String> Ckoha, ChoiceBox<String> Cgrupi,ChoiceBox<String> Cdrejtimi, ChoiceBox<String> Cviti) throws SQLException{
+		
+		String dita = Cdita.getValue();
+		String koha = Ckoha.getValue();
+		String grupi = Cgrupi.getValue();
+		String drejtimi = Cdrejtimi.getValue();
+		String viti = Cviti.getValue();
+		
+		String query = "Select * from oraret where grupi = '"+grupi+"' and dita = '"+dita
+				+"' and KohaFillimit = '"+koha+"' and viti = '"+viti+"' and drejtimi  = '"+drejtimi+"'";
+		ResultSet res = this.connection.executeQuery(query);
+		boolean b = res.next();
+		res.close();
+		if(b == true) {
+			return true;
+		}else {
+		return false;
+		}
+		}	
 	public void insertOrari(ChoiceBox<String> Cdrejtimi,ChoiceBox<String> Cviti,
 			ChoiceBox<String> Cgrupi,ChoiceBox<String> CLenda,
 			ChoiceBox<String> Clu, ChoiceBox<String> Csalla,

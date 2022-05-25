@@ -22,6 +22,8 @@ public class GrupiRepository {
 	while(res.next()) {
 			grupi.add(Grupi.fromResultSet(res));
 		}
+	res.close();
+ 
 		return grupi;
 	}
 	
@@ -41,21 +43,30 @@ public class GrupiRepository {
 		String query = "select * from grupet where emri = '" + grupi +"' and a_b = '" + a_b + "' and Viti = " + vitiId;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();		
-		return Grupi.fromResultSet(res).getId();
+		int i = Grupi.fromResultSet(res).getId();
+		res.close();
+//		this.connection.close();
+		return i;
 	}
 	
 	public String getEmriById(int id) throws SQLException {
 		String query = "select * from grupet where id = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();		
-		return Grupi.fromResultSet(res).getEmri() + Grupi.fromResultSet(res).getGr();
+		String s = Grupi.fromResultSet(res).getEmri() + Grupi.fromResultSet(res).getGr();
+		res.close();
+//		this.connection.close();
+		return s;
 	}
 	
 	public String getEmriByIdS(String id) throws SQLException {
 		String query = "select * from grupet where id = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();		
-		return Grupi.fromResultSet(res).getEmri() + Grupi.fromResultSet(res).getGr();
+		String s = Grupi.fromResultSet(res).getEmri() + Grupi.fromResultSet(res).getGr();
+		res.close();
+//		this.connection.close();
+		return s;
 	}
 	
 	public String getGrupiPjesa1(String grupi) {	

@@ -23,10 +23,10 @@ public class Main extends Application {
 			stage.setScene(scene);
 			stage.setX(100);
 			stage.setY(100);
-			stage.show();
 			stage.setTitle("SMO FIEK");
-			Image icon = new Image("/images/unipr.png");
-			stage.getIcons().add(icon);
+            Image icon = new Image("/images/unipr.png");
+            stage.getIcons().add(icon);
+			stage.show();
 			
 		} catch(Exception e) {
 			e.printStackTrace();

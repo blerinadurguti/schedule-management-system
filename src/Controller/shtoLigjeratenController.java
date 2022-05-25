@@ -16,13 +16,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import processor.CarryProcessor;
 import processor.GjuhaProcessor;
 import processor.Validations;
-import repository.CarryRepository;
 import repository.DitetRepository;
 import repository.DrejtimiRepository;
 import repository.GrupiRepository;
@@ -191,11 +189,23 @@ public class shtoLigjeratenController implements Initializable{
     			
     			if(oraretRepository.checkProfaBusy(chbDita, chbFillimi)) {
     			
-    			oraretRepository.insertOrari(chbdrejtimi, chbViti, chbGrupi, chbLenda, chbL_U, chbSalla, chbDita, chbFillimi);
+    		if(oraretRepository.checkGrupi(chbDita, chbFillimi, chbGrupi,chbdrejtimi,chbViti)) {
+    				
+    				oraretRepository.insertOrari(chbdrejtimi, chbViti, chbGrupi, chbLenda, chbL_U, chbSalla, chbDita, chbFillimi);
     			
     			this.a.setAlertType(AlertType.CONFIRMATION);
     			this.a.setContentText("Ligjerata u shtua!");
     			this.a.show();
+    		
+    			}else {
+    				
+    				this.a.setAlertType(AlertType.CONFIRMATION);
+        			this.a.setContentText("Grupi i zgjedhur është i zënë në orarin e dhënë!");
+        			this.a.show();
+    				
+    			}	
+    			
+    			
     			}else {
     				this.a.setAlertType(AlertType.CONFIRMATION);
         			this.a.setContentText("Ju keni ligjerata ne ate kohe!");

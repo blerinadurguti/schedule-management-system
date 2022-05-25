@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.smoAboutController">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.smoAboutController">
    <children>
       <Pane layoutX="-1.0" prefHeight="49.0" prefWidth="602.0" style="-fx-background-color: c70202;">
          <children>
@@ -18,25 +20,20 @@
             </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="79.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="64.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/unipr.png" />
+            <Image url="@../../../../Documents/GitHub/KNK_project/src/images/unipr.png" />
          </image>
       </ImageView>
       <Label layoutX="331.0" layoutY="99.0" />
+      <TextArea layoutX="294.0" layoutY="116.0" prefHeight="168.0" prefWidth="237.0" text="SMO eshte nje sistem per menaxhimin&#10;e orarit, i krijuar nga studentet e vitit&#10;te dyte te Inxhinierise Kompjuterike,&#10;ne lenden Komunikimi-Njeri-Kompjuter!&#10;&#10;Per ndonje paqartesi, kontaktoni:&#10;&#10;" />
+      <Hyperlink layoutX="300.0" layoutY="230.0" text="smohelp@gmail.com" />
       <Pane layoutY="375.0" prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #C0C0C0;">
          <children>
             <Label layoutX="243.0" layoutY="4.0" prefHeight="17.0" prefWidth="130.0" text="  ©   SMO-FIEK 2022  " />
             <ImageView fitHeight="17.0" fitWidth="34.0" layoutX="179.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
-      <Button layoutX="258.0" layoutY="323.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: c70202;" stylesheets="@../../../../Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="Back" textFill="WHITE" />
-      <Pane layoutX="302.0" layoutY="139.05078125" />
-      <Label layoutX="331.0" layoutY="115.0" prefHeight="49.0" prefWidth="221.0" text="SMO eshte nje sistem per menaxhimin" />
-      <Label layoutX="331.0" layoutY="147.0" prefHeight="17.0" prefWidth="209.0" text="e orarit, i krijuar nga studentet e vitit te" />
-      <Label layoutX="331.0" layoutY="164.0" prefHeight="17.0" prefWidth="209.0" text="dyte te Inxhinierise Kompjuterike, ne " />
-      <Label layoutX="331.0" layoutY="181.0" prefHeight="17.0" prefWidth="209.0" text="lenden Komunikimi-Njeri-Kompjuter!" />
-      <Label layoutX="331.0" layoutY="198.0" prefHeight="17.0" prefWidth="200.0" text="Per ndonje paqartesi, kontaktoni:" />
-      <Label layoutX="331.0" layoutY="224.0" prefHeight="17.0" prefWidth="130.0" text="smohelp@uni-pr.edu" textFill="BLUE" />
+      <Button layoutX="258.0" layoutY="323.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="85.0" stylesheets="@../../../../Documents/GitHub/KNK_project/src/CSS/Dashboard.css" text="Back" />
    </children>
 </Pane>

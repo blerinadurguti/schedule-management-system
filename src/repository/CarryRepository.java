@@ -4,11 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import database.DBConnection;
-import javafx.collections.ObservableList;
-import javafx.scene.chart.PieChart;
 import model.Carry;
-import model.Studenti;
-import model.Grupi;
 
 public class CarryRepository {
 
@@ -37,7 +33,7 @@ public class CarryRepository {
 		while(res.next()) {
 			count++;
 		}
-		
+		res.close();
 		return count;
 	}
 		
@@ -52,6 +48,7 @@ public class CarryRepository {
 		while(res.next()) {
 			count++;
 		}
+		res.close();
 		return count;
 	}
 	
@@ -66,7 +63,9 @@ public class CarryRepository {
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
 		
-		return Carry.fromReultSet(res);
+		Carry c = Carry.fromReultSet(res);
+		res.close();
+		return c;
 	}
 
 	public void setId(int id) throws SQLException {
@@ -74,7 +73,6 @@ public class CarryRepository {
 		String a = "'" + id + "'";
 		String query = "UPDATE CARRY SET CID = " + a + " WHERE ID = 1";
 		this.connection.executeU(query);
-		
 	}
 	
 	public void setIdGjuha() throws SQLException {
@@ -96,14 +94,19 @@ public class CarryRepository {
 		String query = "Select * from Carry where id = 2";
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Carry.fromReultSet(res).getCID();
+		
+		String s = Carry.fromReultSet(res).getCID();
+		res.close();
+		return s;
 	}
 	
 	public String getIdProfaB() throws SQLException {
 		String query = "Select * from Carry where id = 4";
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Carry.fromReultSet(res).getCID();
+		String s = Carry.fromReultSet(res).getCID();
+		res.close();
+		return s;
 	}
 	
 	public String getIdGjuha() throws SQLException {
@@ -111,8 +114,9 @@ public class CarryRepository {
 		String query = "Select * from Carry where id = 3";
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		
-		return Carry.fromReultSet(res).getCID();
+		String s = Carry.fromReultSet(res).getCID();	
+		res.close();
+		return s;
 	}
 	
 }

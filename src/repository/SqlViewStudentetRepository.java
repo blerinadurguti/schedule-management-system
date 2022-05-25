@@ -24,7 +24,7 @@ public class SqlViewStudentetRepository {
 		while(res.next()) {
 			obList.add(SqlViewStudentet.fromResultSet(res));
 		}
-		
+		res.close();
 		return obList;
 	}
 	

@@ -25,7 +25,7 @@ public class TeacherSubjectsRepository {
 		while(res.next()) {
 			Ts.add(TeacherSubjects.fromResultSet(res));
 		}
-		
+		res.close();
 		int[] id = new int[Ts.size()];
 		
 		for(int i = 0; i < Ts.size();i++) {

@@ -79,15 +79,6 @@ public class NdryshoFjalkaliminStudentiController implements Initializable{
 		stage.show();
     }
 
-    @FXML
-    void FSee(MouseEvent event) {
-
-    }
-
-    @FXML
-    void KFSee(MouseEvent event) {
-
-    }
 
     @FXML
     void NdryshoFjalkalimin(ActionEvent event) throws NoSuchAlgorithmException, SQLException, IOException {

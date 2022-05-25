@@ -40,7 +40,9 @@ public class ProfesoriUserRepository {
 			String query = "SELECT * FROM profesorUser WHERE Username = " + a;
 			ResultSet res = this.connection.executeQuery(query);
 			res.next();
-			return profesoriUser.fromResultSet(res);
+			profesoriUser p = profesoriUser.fromResultSet(res);
+			res.close();
+			return p;
 		}
 		
 		public int findIdByUsername(String Username) throws SQLException {
@@ -49,15 +51,18 @@ public class ProfesoriUserRepository {
 			String query = "SELECT * FROM profesoruser WHERE Username = " + a;
 			ResultSet res = connection.executeQuery(query);
 			res.next();
-			return profesoriUser.fromResultSet(res).getId();
+			int i = profesoriUser.fromResultSet(res).getId();
+			res.close();
+			return i;
 		}
 		
 		public boolean IsThereOne(String username) throws SQLException {
 			String a = "'" + username + "'";
 			String query = "SELECT * FROM profesorUser WHERE Username = " + a;
 			ResultSet res = this.connection.executeQuery(query);
-			
-			if(res.next()) {
+			boolean b = res.next();
+			res.close();
+			if(b) {
 				return true;
 			}
 			return false;

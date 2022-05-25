@@ -26,7 +26,7 @@ public class LendetRepository {
 		while(res.next()) {
 			l.add(Lendet.fromResultSet(res));
 		}
-		
+		res.close();
 		return l;
 	}
 	
@@ -38,7 +38,7 @@ public class LendetRepository {
 		while(res.next()) {
 			l.add(Lendet.fromResultSet(res));
 		}
-		
+		res.close();
 		return l;
 	}
 	

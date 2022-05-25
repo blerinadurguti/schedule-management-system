@@ -95,7 +95,7 @@ public class DashBoardController implements Initializable {
 			  
 			  
 			  oblist = oraretRepository.getData();
-			  
+			 
 			  OrariTV.setItems(oblist);
 			  
 			  FilteredList<Oraret> filteredData = new FilteredList<>(oblist, b -> true);
@@ -236,6 +236,6 @@ public class DashBoardController implements Initializable {
 				scene = new Scene(root);
 				stage.setScene(scene);
 				stage.show();
-	    }
+	    }	 
 	 
 }

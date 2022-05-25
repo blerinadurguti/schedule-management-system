@@ -4,10 +4,8 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import database.DBConnection;
 import database.InsertQueryBuilder;
-import java_08_nga_profi.Student;
 import model.Studenti;
 import model.User;
 import processor.SaltedHash;
@@ -41,21 +39,27 @@ public class StudentRepository {
 		String query = "SELECT * FROM USER WHERE USERNAME = " + a;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return User.fromResultSet(res);
+		User u = User.fromResultSet(res);
+		res.close();
+		return u;
 	}
 	
 	public Studenti findById(int id) throws SQLException {
 		String query = "SELECT * FROM STUDENTI WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Studenti.fromResultSet(res);
+		Studenti s = Studenti.fromResultSet(res);
+		res.close();
+		return s;
 	}
 	
 	public Studenti findById2(String id) throws SQLException {
 		String query = "SELECT * FROM STUDENTI WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Studenti.fromResultSet(res);
+		Studenti s = Studenti.fromResultSet(res);
+		res.close();
+		return s;
 	}
 	
 	public String findUsernameById(String id) throws SQLException {
@@ -63,7 +67,9 @@ public class StudentRepository {
 		String query = "SELECT * FROM USER WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return User.fromResultSet(res).getUsername();
+		String s = User.fromResultSet(res).getUsername();
+		res.close();
+		return s;
 	}
 	
 	public void changePassword(String a, String cid) throws NoSuchAlgorithmException, SQLException {
@@ -88,13 +94,7 @@ public class StudentRepository {
 				.add("grupi", student.getGrupi(), "i");
 		
 		int lastInsertedId = this.connection.execute(query);
-//		Studenti createdStudent = this.findById(lastInsertedId);
-//		
-//		if(createdStudent != null) {
-//			return createdStudent;
-//		}
-//		
-//		throw new Exception("Student failed to create!");
+
 	}
 	
 	
@@ -106,6 +106,7 @@ public class StudentRepository {
 		while(res.next()) {
 			student.add(Studenti.fromResultSet(res));
 		}
+		res.close();
 		return student;
 	}
 	
@@ -113,7 +114,9 @@ public class StudentRepository {
 		String query = "SELECT * FROM STUDENTI WHERE STUDENTID = '" + studentId + "'";
 		ResultSet res = this.connection.executeQuery(query);
 		if(res.next()) {	
-		return Studenti.fromResultSet(res).getId();
+			int i = Studenti.fromResultSet(res).getId();
+			res.close();
+		return i;
 		}else {
 			return 0;
 		}
@@ -122,8 +125,9 @@ public class StudentRepository {
 	public boolean checkIfSIDExists(String studentId) throws SQLException {
 		String query = "SELECT * FROM STUDENTI WHERE STUDENTID = '" + studentId + "'";
 		ResultSet res = this.connection.executeQuery(query);
-		
-		if(res.next()) {
+		boolean b = res.next();
+		res.close();
+		if(b) {
 			return true;
 		}else {
 		return false;
@@ -135,21 +139,27 @@ public class StudentRepository {
 		String query = "select * from studenti where id = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Studenti.fromResultSet(res).getGrupi();
+		int i = Studenti.fromResultSet(res).getGrupi();
+		res.close();
+		return i;
 	}
 	
 	public int getDrejtimiById(String id) throws SQLException {
 		String query = "select * from studenti where id = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Studenti.fromResultSet(res).getDrejtimi();
+		int i = Studenti.fromResultSet(res).getDrejtimi();
+		res.close();
+		return i;
 	}
 	
 	public int getVitiById(String id) throws SQLException {
 		String query = "select * from studenti where id = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Studenti.fromResultSet(res).getViti();
+		int i = Studenti.fromResultSet(res).getViti();
+		res.close();
+		return i;
 	}
 	
 	public int getIdBySid(String StudentId) throws SQLException {
@@ -157,7 +167,9 @@ public class StudentRepository {
 		String query = "Select * from studenti where StudentId = '"+StudentId+"'";
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return Studenti.fromResultSet(res).getId();
+		int i = Studenti.fromResultSet(res).getId();
+		res.close();
+		return i;
 	}
 	
 	public void RemoveBySId(String StudentId) throws SQLException {

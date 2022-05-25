@@ -3,9 +3,7 @@ package repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import database.DBConnection;
-import model.Drejtimi;
 import model.VitiAkademik;
 
 public class VitiAkademikRepository {
@@ -24,6 +22,7 @@ public class VitiAkademikRepository {
 			while(res.next() != false) {
 				viti.add(VitiAkademik.fromResultSet(res));
 			}
+			res.close();
 		return viti;
 	}
 	
@@ -43,7 +42,9 @@ public class VitiAkademikRepository {
 		String query = "SELECT * FROM VITIAKADEMIK WHERE VITI = '" + viti + "'";
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();		
-		return VitiAkademik.fromResultSet(res).getId();
+		int i = VitiAkademik.fromResultSet(res).getId();
+		res.close();
+		return i;
 	}
 	
 	public String getEmriById(int id) throws SQLException {
@@ -51,7 +52,9 @@ public class VitiAkademikRepository {
 		String query = "SELECT * FROM VITIAKADEMIK WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return VitiAkademik.fromResultSet(res).getViti();
+		String s = VitiAkademik.fromResultSet(res).getViti();
+		res.close();
+		return s;
 	}
 	
 public String getEmriBySId(String id) throws SQLException {
@@ -59,7 +62,9 @@ public String getEmriBySId(String id) throws SQLException {
 		String query = "SELECT * FROM VITIAKADEMIK WHERE ID = " + id;
 		ResultSet res = this.connection.executeQuery(query);
 		res.next();
-		return VitiAkademik.fromResultSet(res).getViti();
+		String s = VitiAkademik.fromResultSet(res).getViti();
+		res.close();
+		return s;
 	}
 	
 }

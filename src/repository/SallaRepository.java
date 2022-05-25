@@ -23,6 +23,7 @@ private DBConnection connection;
 		while(res.next()) {
 			s.add(Salla.fromResultSet(res));
 		}
+		res.close();
 		return s;
 	}
 	

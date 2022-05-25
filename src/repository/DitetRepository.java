@@ -24,7 +24,7 @@ private DBConnection connection;
 		while(res.next()) {
 			d.add(Ditet.fromResultSet(res));
 		}
-		
+		res.close();
 		return d;
 	}
 	
