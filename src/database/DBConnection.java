@@ -11,7 +11,7 @@ public class DBConnection {
 	private static String IP = "localhost:3306";
 	private static String DATABASE_NAME = "smo";
 	private static String USER_NAME = "root";
-	private static String PASSWORD = "1244561752";
+	private static String PASSWORD = "";
 	private Connection connection;
 	
 	public static DBConnection getConnection() {
